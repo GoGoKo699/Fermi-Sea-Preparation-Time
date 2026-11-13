@@ -1,0 +1,11 @@
+# Fermi-Sea Preparation Time
+
+Question: how long must a bounded-rate stationary finite-range fermionic gain/loss reservoir take to prepare a critical Fermi sea at fixed whole-state fidelity?
+
+Read science/model.md for allowed operations, one-mode periodic geometry, exact gain/loss rates, all-physical-input dynamics and fidelity/time definitions.
+Read science/root_budget.md for the finite-grid aggregate error, inherited root deletions and new weighted root-potential estimate.
+Read science/time_converse.md for explicit finite-size conditions/constants, complex polynomial growth, Jensen attenuation, the near-Fermi slow mode and asymptotic corollaries.
+Read science/construction.md for inherited matching geometric-root filters, actual rate normalization and sufficient finite precision/time.
+Read science/interpretation.md and science/limitations.md for physical consequences, companion relationship and boundaries. Pairing is outside the temporal theorem, even though the companion spatial theorem permits it.
+Read references/RELATED_WORK.md for primary-source statements, inspected versions and attribution.
+Read verification/README.md and verification/run_all.py for reproducible diagnostics. Finite checks are not proofs or priority certification.
