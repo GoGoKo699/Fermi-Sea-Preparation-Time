@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-13T13:24:37.604120+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "mpmath": "1.3.0"
+  },
+  "status": "passed",
+  "randomness": "none",
+  "scientific_limit": "Finite numerical diagnostics do not prove asymptotics, arbitrary-root inequalities, or literature priority.",
+  "fock_lindblad": {
+    "modes": 3,
+    "full_liouville_dimension": 64,
+    "finite_theorem_grid": false,
+    "fourier_mixing_error": 4.440892098500626e-16,
+    "eigenbasis_condition": 5.684257911573022,
+    "non_gaussian_wick_defect": 0.2500000000000001,
+    "max_effect_error": 3.730003398765315e-15,
+    "max_population_error": 1.9984014443252818e-15,
+    "reference_reduction_error": 9.209670460035599e-17,
+    "minimum_reference_output_eigenvalue": -7.889449924184437e-17,
+    "max_trace_error": 2.6645352591003757e-15,
+    "curves": [
+      {
+        "time": 0.0,
+        "worst_overlap": 0.0,
+        "effect_operator_error": 4.201590543366631e-16
+      },
+      {
+        "time": 0.09,
+        "worst_overlap": 0.00023378819104424481,
+        "effect_operator_error": 3.4358021697034717e-16
+      },
+      {
+        "time": 0.7,
+        "worst_overlap": 0.050276931992907635,
+        "effect_operator_error": 9.316866069358323e-16
+      },
+      {
+        "time": 2.0,
+        "worst_overlap": 0.2829363854670788,
+        "effect_operator_error": 2.4752989475924758e-15
+      },
+      {
+        "time": 6.0,
+        "worst_overlap": 0.4748347651432105,
+        "effect_operator_error": 3.730003398765315e-15
+      }
+    ]
+  },
+  "geometric_root_construction": {
+    "epsilon_parameter": 0.1,
+    "target_overlap": 0.9,
+    "rates": "ideal unrounded geometric-root construction; Gamma=1",
+    "finite_product_curves": [
+      {
+        "sites": 66,
+        "s": 7,
+        "formal_radius": 49,
+        "stationary_overlap": 1.0,
+        "stationary_log_overlap": -4.478033722687853e-17,
+        "stationary_infidelity": 4.478033722687853e-17,
+        "log_inverse_minimum_rate": 221.2228674008002,
+        "log_worst_time_to_overlap_0.9": 222.51754055176394,
+        "log_time_over_logN_cubed": 3.025725635546487,
+        "mp_minimum_log_rate_error": 0.0,
+        "formal_radius_exceeds_half_ring": true
+      },
+      {
+        "sites": 258,
+        "s": 7,
+        "formal_radius": 49,
+        "stationary_overlap": 0.9999999999999998,
+        "stationary_log_overlap": -1.7505037314502046e-16,
+        "stationary_infidelity": 1.7505037314502044e-16,
+        "log_inverse_minimum_rate": 282.6793433652852,
+        "log_worst_time_to_overlap_0.9": 283.9740165162475,
+        "log_time_over_logN_cubed": 1.6584602477535693,
+        "mp_minimum_log_rate_error": 1.7053025658242404e-12,
+        "formal_radius_exceeds_half_ring": false
+      },
+      {
+        "sites": 1026,
+        "s": 8,
+        "formal_radius": 64,
+        "stationary_overlap": 1.0,
+        "stationary_log_overlap": -3.739260115957593e-18,
+        "stationary_infidelity": 3.739260115957593e-18,
+        "log_inverse_minimum_rate": 457.16212311906617,
+        "log_worst_time_to_overlap_0.9": 458.4567962700254,
+        "log_time_over_logN_cubed": 1.375483293799328,
+        "mp_minimum_log_rate_error": 7.389644451905042e-13,
+        "formal_radius_exceeds_half_ring": false
+      },
+      {
+        "sites": 4098,
+        "s": 9,
+        "formal_radius": 81,
+        "stationary_overlap": 1.0,
+        "stationary_log_overlap": -8.378451591513828e-20,
+        "stationary_infidelity": 8.378451591513828e-20,
+        "log_inverse_minimum_rate": 681.3262013319872,
+        "log_worst_time_to_overlap_0.9": 682.620874482943,
+        "log_time_over_logN_cubed": 1.185995334956882,
+        "mp_minimum_log_rate_error": 1.1368683772161603e-11,
+        "formal_radius_exceeds_half_ring": false
+      },
+      {
+        "sites": 16386,
+        "s": 11,
+        "formal_radius": 121,
+        "stationary_overlap": 1.0,
+        "stationary_log_overlap": -1.1467645007514906e-23,
+        "stationary_infidelity": 1.1467645007514906e-23,
+        "log_inverse_minimum_rate": 1242.1706862818069,
+        "log_worst_time_to_overlap_0.9": 1243.4653594326237,
+        "log_time_over_logN_cubed": 1.3606825421420536,
+        "mp_minimum_log_rate_error": 2.2532731236424297e-10,
+        "formal_radius_exceeds_half_ring": false
+      }
+    ],
+    "large_size_minimum_rates": [
+      {
+        "sites_exact_integer": "402",
+        "s": 8,
+        "log_inverse_minimum_rate": 416.90589968499233,
+        "log_inverse_rate_over_logN_cubed": 1.9335479064208323,
+        "scope": "nearest-mode rate only; not full-grid time"
+      },
+      {
+        "sites_exact_integer": "40002",
+        "s": 11,
+        "log_inverse_minimum_rate": 1283.1192321662331,
+        "log_inverse_rate_over_logN_cubed": 1.0783431248367263,
+        "scope": "nearest-mode rate only; not full-grid time"
+      },
+      {
+        "sites_exact_integer": "400000002",
+        "s": 21,
+        "log_inverse_minimum_rate": 9098.463253897555,
+        "log_inverse_rate_over_logN_cubed": 1.170883208617045,
+        "scope": "nearest-mode rate only; not full-grid time"
+      },
+      {
+        "sites_exact_integer": "40000000000000002",
+        "s": 39,
+        "log_inverse_minimum_rate": 59087.02752367189,
+        "log_inverse_rate_over_logN_cubed": 1.0576918062203295,
+        "scope": "nearest-mode rate only; not full-grid time"
+      },
+      {
+        "sites_exact_integer": "400000000000000000000000000000002",
+        "s": 76,
+        "log_inverse_minimum_rate": 438469.6160527066,
+        "log_inverse_rate_over_logN_cubed": 1.0364713725031542,
+        "scope": "nearest-mode rate only; not full-grid time"
+      }
+    ]
+  },
+  "weighted_root_deletion": {
+    "grids": [
+      {
+        "sites": 1026,
+        "selected_nodes": 118,
+        "a": 11,
+        "b": 128,
+        "clip_ell": 0.0321618844094682,
+        "clip_L": 3.436973241566209,
+        "tested_roots": 15,
+        "maximum_unweighted_sum": 3.333579065179801,
+        "unweighted_budget": 4.934802200544679,
+        "maximum_weighted_bound_fraction": 0.48845534709367777,
+        "adversarial_cases": [
+          {
+            "root_real": 0.0,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.0,
+            "finite_upper_bound": 21.57982439670029
+          },
+          {
+            "root_real": 0.0,
+            "root_imag": 0.21928652968806706,
+            "deleted_count": 2,
+            "weighted_sum": 0.0,
+            "finite_upper_bound": 12.106991949506908
+          },
+          {
+            "root_real": 0.21928652968806706,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 5.913724954956759,
+            "finite_upper_bound": 12.106991949506908
+          },
+          {
+            "root_real": -0.21928652968806706,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 5.913724954956759,
+            "finite_upper_bound": 12.106991949506908
+          },
+          {
+            "root_real": 0.21928652968828635,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 5.913724954951865,
+            "finite_upper_bound": 12.106991949501973
+          },
+          {
+            "root_real": 0.2192865296878478,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 5.909063546665081,
+            "finite_upper_bound": 12.106991949511842
+          },
+          {
+            "root_real": 0.21928652968806706,
+            "root_imag": 2.1928652968806706e-15,
+            "deleted_count": 2,
+            "weighted_sum": 5.913724954956759,
+            "finite_upper_bound": 12.106991949506908
+          },
+          {
+            "root_real": 0.21928652968806706,
+            "root_imag": 0.04385730593761342,
+            "deleted_count": 2,
+            "weighted_sum": 5.108921251282071,
+            "finite_upper_bound": 12.010218718719035
+          },
+          {
+            "root_real": 0.003522734429021423,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.48906800907409576,
+            "finite_upper_bound": 21.57982439670029
+          },
+          {
+            "root_real": 0.0321618844094682,
+            "root_imag": 0.0,
+            "deleted_count": 1,
+            "weighted_sum": 4.593374851582944,
+            "finite_upper_bound": 21.57982439670029
+          },
+          {
+            "root_real": 0.41870487236071563,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 3.4775568802741494,
+            "finite_upper_bound": 8.915225641722692
+          },
+          {
+            "root_real": 0.01,
+            "root_imag": 0.2,
+            "deleted_count": 2,
+            "weighted_sum": 0.18141811773129018,
+            "finite_upper_bound": 12.555138227976778
+          },
+          {
+            "root_real": 2.0,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.62834262264248,
+            "finite_upper_bound": 4.619041281006186
+          },
+          {
+            "root_real": 1e-100,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 1.3861905837714965e-98,
+            "finite_upper_bound": 21.57982439670029
+          },
+          {
+            "root_real": 1e+100,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 1.251787780312569e-100,
+            "finite_upper_bound": 4.619041281006186
+          }
+        ]
+      },
+      {
+        "sites": 4098,
+        "selected_nodes": 496,
+        "a": 17,
+        "b": 512,
+        "clip_ell": 0.012649839821020737,
+        "clip_L": 4.3701107262586785,
+        "tested_roots": 15,
+        "maximum_unweighted_sum": 3.714939433862385,
+        "unweighted_budget": 4.934802200544679,
+        "maximum_weighted_bound_fraction": 0.5781778627304377,
+        "adversarial_cases": [
+          {
+            "root_real": 0.0,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.0,
+            "finite_upper_bound": 26.047092218692466
+          },
+          {
+            "root_real": 0.0,
+            "root_imag": 0.206394581136269,
+            "deleted_count": 2,
+            "weighted_sum": 0.0,
+            "finite_upper_bound": 12.268407811437669
+          },
+          {
+            "root_real": 0.206394581136269,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.093321807522438,
+            "finite_upper_bound": 12.268407811437669
+          },
+          {
+            "root_real": -0.206394581136269,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.093321807522438,
+            "finite_upper_bound": 12.268407811437669
+          },
+          {
+            "root_real": 0.2063945811364754,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.093321807516715,
+            "finite_upper_bound": 12.268407811432734
+          },
+          {
+            "root_real": 0.2063945811360626,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.092886008254743,
+            "finite_upper_bound": 12.268407811442604
+          },
+          {
+            "root_real": 0.206394581136269,
+            "root_imag": 2.06394581136269e-15,
+            "deleted_count": 2,
+            "weighted_sum": 7.093321807522438,
+            "finite_upper_bound": 12.268407811437669
+          },
+          {
+            "root_real": 0.206394581136269,
+            "root_imag": 0.0412789162272538,
+            "deleted_count": 2,
+            "weighted_sum": 6.121549152821339,
+            "finite_upper_bound": 12.171634580649796
+          },
+          {
+            "root_real": 0.0013416586149206302,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.6778469692426451,
+            "finite_upper_bound": 26.047092218692466
+          },
+          {
+            "root_real": 0.012649839821020737,
+            "root_imag": 0.0,
+            "deleted_count": 1,
+            "weighted_sum": 7.002051692591996,
+            "finite_upper_bound": 26.047092218692466
+          },
+          {
+            "root_real": 0.41533669176013155,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 3.9113475861543603,
+            "finite_upper_bound": 8.817502025847304
+          },
+          {
+            "root_real": 0.01,
+            "root_imag": 0.2,
+            "deleted_count": 2,
+            "weighted_sum": 0.22319377718493505,
+            "finite_upper_bound": 12.417557137097827
+          },
+          {
+            "root_real": 2.0,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.7093504540023716,
+            "finite_upper_bound": 4.481460190127233
+          },
+          {
+            "root_real": 1e-100,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 5.0452099725700395e-98,
+            "finite_upper_bound": 26.047092218692466
+          },
+          {
+            "root_real": 1e+100,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 1.4138278653226819e-100,
+            "finite_upper_bound": 4.481460190127233
+          }
+        ]
+      },
+      {
+        "sites": 16386,
+        "selected_nodes": 2023,
+        "a": 26,
+        "b": 2048,
+        "clip_ell": 0.004889005916058991,
+        "clip_L": 5.320766285310887,
+        "tested_roots": 15,
+        "maximum_unweighted_sum": 3.86322090976521,
+        "unweighted_budget": 4.934802200544679,
+        "maximum_weighted_bound_fraction": 0.6224129225445549,
+        "adversarial_cases": [
+          {
+            "root_real": 0.0,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.0,
+            "finite_upper_bound": 30.64692294853177
+          },
+          {
+            "root_real": 0.0,
+            "root_imag": 0.20157950463066743,
+            "deleted_count": 2,
+            "weighted_sum": 0.0,
+            "finite_upper_bound": 12.293431900952717
+          },
+          {
+            "root_real": 0.20157950463066743,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.651590877574444,
+            "finite_upper_bound": 12.293431900952717
+          },
+          {
+            "root_real": -0.20157950463066743,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.651590877574444,
+            "finite_upper_bound": 12.293431900952717
+          },
+          {
+            "root_real": 0.20157950463086902,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.651590877568584,
+            "finite_upper_bound": 12.29343190094778
+          },
+          {
+            "root_real": 0.20157950463046584,
+            "root_imag": 0.0,
+            "deleted_count": 2,
+            "weighted_sum": 7.651555422028173,
+            "finite_upper_bound": 12.293431900957652
+          },
+          {
+            "root_real": 0.20157950463066743,
+            "root_imag": 2.015795046306674e-15,
+            "deleted_count": 2,
+            "weighted_sum": 7.651590877574444,
+            "finite_upper_bound": 12.293431900952717
+          },
+          {
+            "root_real": 0.20157950463066743,
+            "root_imag": 0.04031590092613349,
+            "deleted_count": 2,
+            "weighted_sum": 6.609035124378692,
+            "finite_upper_bound": 12.196658670164842
+          },
+          {
+            "root_real": 0.0005080734875441238,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.8688727371859025,
+            "finite_upper_bound": 30.64692294853177
+          },
+          {
+            "root_real": 0.004889005916058991,
+            "root_imag": 0.0,
+            "deleted_count": 1,
+            "weighted_sum": 9.53735150961099,
+            "finite_upper_bound": 30.64692294853177
+          },
+          {
+            "root_real": 0.4144943638356796,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 4.116289852801544,
+            "finite_upper_bound": 8.736053850398962
+          },
+          {
+            "root_real": 0.01,
+            "root_imag": 0.2,
+            "deleted_count": 2,
+            "weighted_sum": 0.243493217713218,
+            "finite_upper_bound": 12.326090722166262
+          },
+          {
+            "root_real": 2.0,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 0.7491720369902486,
+            "finite_upper_bound": 4.38999377519567
+          },
+          {
+            "root_real": 1e-100,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 1.7078574915206168e-97,
+            "finite_upper_bound": 30.64692294853177
+          },
+          {
+            "root_real": 1e+100,
+            "root_imag": 0.0,
+            "deleted_count": 0,
+            "weighted_sum": 1.493478280200441e-100,
+            "finite_upper_bound": 4.38999377519567
+          }
+        ]
+      }
+    ],
+    "undeleted_exact_sample_pole": "infinite; excluded before kernel evaluation",
+    "scope": "finite root/pole diagnostics, not proof of the all-root bound"
+  },
+  "clipping_jensen": {
+    "clipping_geometry": [
+      {
+        "sites": 4098,
+        "clip_ell_x_a_minus_1": 0.012649839821020737,
+        "minimum_near_root_margin": 0.0,
+        "root_cases": 12,
+        "evaluation_points": 5,
+        "center_range": "entire allowed [-ell,ell], including endpoints"
+      },
+      {
+        "sites": 65538,
+        "clip_ell_x_a_minus_1": 0.0019413876273089716,
+        "minimum_near_root_margin": -8.881784197001252e-16,
+        "root_cases": 12,
+        "evaluation_points": 5,
+        "center_range": "entire allowed [-ell,ell], including endpoints"
+      },
+      {
+        "sites": 1048578,
+        "clip_ell_x_a_minus_1": 0.00030409913632435453,
+        "minimum_near_root_margin": 8.881784197001252e-16,
+        "root_cases": 12,
+        "evaluation_points": 5,
+        "center_range": "entire allowed [-ell,ell], including endpoints"
+      }
+    ],
+    "complex_growth": [
+      {
+        "polynomial_degree": 4,
+        "shift": 0.0,
+        "complex_max_over_real_sup": 2.25,
+        "finite_bound": 64.0
+      },
+      {
+        "polynomial_degree": 4,
+        "shift": 0.17,
+        "complex_max_over_real_sup": 1.2922054204105489,
+        "finite_bound": 64.0
+      },
+      {
+        "polynomial_degree": 4,
+        "shift": 1.1,
+        "complex_max_over_real_sup": 0.08163265306122451,
+        "finite_bound": 64.0
+      },
+      {
+        "polynomial_degree": 8,
+        "shift": 0.0,
+        "complex_max_over_real_sup": 12.25,
+        "finite_bound": 1024.0
+      },
+      {
+        "polynomial_degree": 8,
+        "shift": 0.17,
+        "complex_max_over_real_sup": 9.839213967419097,
+        "finite_bound": 1024.0
+      },
+      {
+        "polynomial_degree": 8,
+        "shift": 1.1,
+        "complex_max_over_real_sup": 4.798185941043083,
+        "finite_bound": 1024.0
+      },
+      {
+        "polynomial_degree": 16,
+        "shift": 0.0,
+        "complex_max_over_real_sup": 552.25,
+        "finite_bound": 262144.0
+      },
+      {
+        "polynomial_degree": 16,
+        "shift": 0.17,
+        "complex_max_over_real_sup": 409.2840236686391,
+        "finite_bound": 262144.0
+      },
+      {
+        "polynomial_degree": 16,
+        "shift": 1.1,
+        "complex_max_over_real_sup": 137.22448979591837,
+        "finite_bound": 262144.0
+      },
+      {
+        "polynomial_degree": 32,
+        "shift": 0.0,
+        "complex_max_over_real_sup": 1217712.25,
+        "finite_bound": 17179869184.0
+      },
+      {
+        "polynomial_degree": 32,
+        "shift": 0.17,
+        "complex_max_over_real_sup": 889829.4023668641,
+        "finite_bound": 17179869184.0
+      },
+      {
+        "polynomial_degree": 32,
+        "shift": 1.1,
+        "complex_max_over_real_sup": 276675.99999999994,
+        "finite_bound": 17179869184.0
+      }
+    ],
+    "scope": "finite geometric diagnostics; no polynomial-root certification"
+  },
+  "finite_temporal_certificate": {
+    "target_overlap": 0.9,
+    "rows": [
+      {
+        "N_decimal_exponent": 2,
+        "N_exact_description": "4*10^2+2",
+        "radius": 72,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": false,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": false
+        },
+        "finite_bound_applies": false,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -899.8518371745728,
+        "log_Gamma_time_lower_bound": null,
+        "lower_log_time_over_logN_cubed": null,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 4,
+        "N_exact_description": "4*10^4+2",
+        "radius": 225,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -2808.779172436662,
+        "log_Gamma_time_lower_bound": -2808.779172436662,
+        "lower_log_time_over_logN_cubed": -2.3605192984818952,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 8,
+        "N_exact_description": "4*10^8+2",
+        "radius": 785,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -9795.702752480911,
+        "log_Gamma_time_lower_bound": -9795.702752480911,
+        "lower_log_time_over_logN_cubed": -1.2606111108456,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 16,
+        "N_exact_description": "4*10^16+2",
+        "radius": 2923,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -36470.77884914984,
+        "log_Gamma_time_lower_bound": -36470.77884914984,
+        "lower_log_time_over_logN_cubed": -0.6528479358648622,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 32,
+        "N_exact_description": "4*10^32+2",
+        "radius": 11271,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -140625.84678880946,
+        "log_Gamma_time_lower_bound": -140625.84678880946,
+        "lower_log_time_over_logN_cubed": -0.33241679490305903,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 64,
+        "N_exact_description": "4*10^64+2",
+        "radius": 44255,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -552155.6456534157,
+        "log_Gamma_time_lower_bound": -552155.6456534157,
+        "lower_log_time_over_logN_cubed": -0.16775495265560814,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 128,
+        "N_exact_description": "4*10^128+2",
+        "radius": 175371,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 0.0,
+        "formula_log_Gamma_time_value": -2188043.988726776,
+        "log_Gamma_time_lower_bound": -2188043.988726776,
+        "lower_log_time_over_logN_cubed": -0.08426848901047299,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 256,
+        "N_exact_description": "4*10^256+2",
+        "radius": 698203,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 1390992.9433639608,
+        "formula_log_Gamma_time_value": -8015738.997762107,
+        "log_Gamma_time_lower_bound": -8015738.997762107,
+        "lower_log_time_over_logN_cubed": -0.03886118914903832,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 512,
+        "N_exact_description": "4*10^512+2",
+        "radius": 2786263,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 30204115.373372193,
+        "formula_log_Gamma_time_value": -19661170.01587798,
+        "log_Gamma_time_lower_bound": -19661170.01587798,
+        "lower_log_time_over_logN_cubed": -0.011956973070722899,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 1024,
+        "N_exact_description": "4*10^1024+2",
+        "radius": 11131965,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 317668917.45326805,
+        "formula_log_Gamma_time_value": 19944834.424387004,
+        "log_Gamma_time_lower_bound": 19944834.424387004,
+        "lower_log_time_over_logN_cubed": 0.0015188598258504835,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      },
+      {
+        "N_decimal_exponent": 2048,
+        "N_exact_description": "4*10^2048+2",
+        "radius": 44501699,
+        "radius_rule": "ceil(2(log N)^2)",
+        "conditions": {
+          "N_at_least_1026": true,
+          "ell_at_most_1_over_16": true,
+          "good_mode_count_at_most_a": true,
+          "sampling_condition": true
+        },
+        "finite_bound_applies": true,
+        "Z": 2844958444.6868396,
+        "formula_log_Gamma_time_value": 867247131.3547364,
+        "log_Gamma_time_lower_bound": 867247131.3547364,
+        "lower_log_time_over_logN_cubed": 0.008262719136244224,
+        "asymptotic_lower_coefficient": 0.015010545724790781,
+        "scope": "necessary bound evaluation; no assertion radius is feasible"
+      }
+    ],
+    "scope": "100-digit elementary finite-bound evaluations, not interval certificates"
+  },
+  "grid_normalization": {
+    "between_node_peaks": [
+      {
+        "sites": 66,
+        "jump_radius": 1,
+        "grid_sup": 0.9984903557642446,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.1035478670359014
+      },
+      {
+        "sites": 66,
+        "jump_radius": 2,
+        "grid_sup": 0.9954765364380688,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.22958990733593
+      },
+      {
+        "sites": 66,
+        "jump_radius": 4,
+        "grid_sup": 0.9849854092261198,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.5907364223461744
+      },
+      {
+        "sites": 258,
+        "jump_radius": 1,
+        "grid_sup": 0.999901155393704,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.0248600134496049
+      },
+      {
+        "sites": 258,
+        "jump_radius": 2,
+        "grid_sup": 0.9997034896295822,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.0508889958155103
+      },
+      {
+        "sites": 258,
+        "jump_radius": 4,
+        "grid_sup": 0.9990119056119443,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.1068325921293838
+      },
+      {
+        "sites": 1026,
+        "jump_radius": 1,
+        "grid_sup": 0.999993749528967,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.00615540729883
+      },
+      {
+        "sites": 1026,
+        "jump_radius": 2,
+        "grid_sup": 0.9999812486806657,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.012380812513917
+      },
+      {
+        "sites": 1026,
+        "jump_radius": 4,
+        "grid_sup": 0.9999374966961201,
+        "known_continuous_sup": 1.0,
+        "Bernstein_corrected_bound": 1.0250468907032817
+      }
+    ],
+    "scope": "positive trig-polynomial sampling diagnostics"
+  }
+}
