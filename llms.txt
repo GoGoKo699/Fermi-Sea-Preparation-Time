@@ -9,3 +9,5 @@ Read science/construction.md for inherited matching geometric-root filters, actu
 Read science/interpretation.md and science/limitations.md for physical consequences, companion relationship and boundaries. Pairing is outside the temporal theorem, even though the companion spatial theorem permits it.
 Read references/RELATED_WORK.md for primary-source statements, inspected versions and attribution.
 Read verification/README.md and verification/run_all.py for reproducible diagnostics. Finite checks are not proofs or priority certification.
+
+For self-directed learning, start learning/README.md, then learning/anchor_bridge.md and learning/milestones.md. The only educational anchor is Breuer–Petruccione, The Theory of Open Quantum Systems (2002); exactly M01–M30 provide14 background and16 narrative targets. The bridge supplies the project-specific fermionic/filter/root/Jensen steps and a worked all-input two-mode example.
