@@ -32,7 +32,7 @@ In the convention used throughout the repository,
 
 The gain and loss jump operators may equivalently be written $`\sqrt a\,c^\dagger`$ and $`\sqrt b\,c`$. The square roots matter: multiplying a jump amplitude by a factor multiplies its rate by the square of that factor.
 
-The adjoint is defined by $`\operatorname{Tr}[O\mathcal L(\rho)]=\operatorname{Tr}[\mathcal L^\dagger(O)\rho]`$. When the coherent Hamiltonian commutes with $`n`$,
+The adjoint is defined by $`\mathrm{Tr}[O\mathcal L(\rho)]=\mathrm{Tr}[\mathcal L^\dagger(O)\rho]`$. When the coherent Hamiltonian commutes with $`n`$,
 
 ```math
 \mathcal L^\dagger(n)=a(1-n)-bn,

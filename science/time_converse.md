@@ -20,16 +20,16 @@ there are real polynomials $`A,B`$, nonnegative on the real axis, such that
 
 This follows by substituting the fractional-linear expression for $`e^{ik}`$ into a Laurent polynomial of degree at most $`2R`$ and multiplying by the displayed common denominator. The representation remains valid for arbitrarily many jump families and for coefficient cancellations. No positivity of individual polynomial coefficients is assumed.
 
-Assume for the moment that $`2\pi R/N\le1/2`$. Trigonometric Bernstein's inequality gives
+Assume for the moment that $`2\pi R/N\le1/2`$. With both maxima taken over a full period, trigonometric Bernstein's inequality gives
 
 ```math
-\|g'\|_\infty\le2R\|g\|_\infty.
+\max_k|g'(k)|\le2R\max_k g(k).
 ```
 
 A maximizer lies within $`\pi/N`$ of a grid point. The finite-ring budget therefore implies
 
 ```math
-\|g\|_\infty\le\frac{\Gamma}{1-2\pi R/N}\le2\Gamma.
+\max_k g(k)\le\frac{\Gamma}{1-2\pi R/N}\le2\Gamma.
 ```
 
 Because the continuous rates are nonnegative, $`a,b\le g`$. Thus, for either $`P=A`$ or $`P=B`$,

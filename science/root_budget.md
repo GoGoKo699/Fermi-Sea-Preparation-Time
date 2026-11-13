@@ -71,7 +71,7 @@ K(y)=2\sum_{m\ge0}\frac{e^{-(2m+1)y}}{2m+1},\quad y>0,
 \int_{\mathbb R}|y|K(y)\,dy=C_1.
 ```
 
-For $`\alpha=|\operatorname{Re}z|`$, the actual kernel can be written as
+For $`\alpha=|\mathrm{Re}z|`$, the actual kernel can be written as
 
 ```math
 h_z(x)=\tfrac12\log\frac{x^2+r^2+2\alpha x}{x^2+r^2-2\alpha x}.
