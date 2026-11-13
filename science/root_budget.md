@@ -185,6 +185,6 @@ The occupation-bad deletion contributes $`O_E((\log N)^2)`$ after multiplication
 \ge\left(\frac8{27\pi^2}+o(1)\right)(\log N)^3.
 ```
 
-The unweighted logarithmic-kernel estimate is classical: see D. J. Newman, *Rational approximation to $`|x|`$*, Michigan Math. J. **11**, 11–14 (1964), [Lemma 3 on p. 13](https://doi.org/10.1307/mmj/1028999029). Its continuous root integral is credited here; the displayed kernel expansion gives a self-contained calculation of the mass and first moment used in the weighted proof.
+The unweighted logarithmic-kernel estimate is classical: see D. J. Newman, *Rational approximation to* $`|x|`$, Michigan Math. J. **11**, 11–14 (1964), [Lemma 3 on p. 13](https://doi.org/10.1307/mmj/1028999029). Its continuous root integral is credited here; the displayed kernel expansion gives a self-contained calculation of the mass and first moment used in the weighted proof.
 
 The tangent grid, aggregate-error treatment, unimodality and two-node deletion are inherited from the [pinned unweighted scalar argument](https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/293b8e6914d8ff85ed3605d6c85dc95abfef4b61/science/range_lower_bound.md). Here the lower endpoint is chosen closer to the Fermi point and each node receives the additional $`\log(1/x)`$ weight. The finite first moment of the root kernel controls that extra weight. This is the step that supplies the temporal cubic logarithm.

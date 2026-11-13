@@ -48,7 +48,7 @@ The ratio $`a/(a+b)`$ fixes the destination; the sum $`g=a+b`$ fixes occupation 
 | A Markovian semigroup | $`e^{t\mathcal L}`$ with one time-independent generator | Intermediate controls, feedback and time dependence are outside the result. |
 | Hamiltonian plus dissipator | A number-conserving translation-invariant quadratic $`H`$, and separate linear gain/loss jumps | In momentum space $`H`$ commutes with every occupation and cannot speed this score. Pairing is outside this temporal proof. |
 | Relaxation rate | $`g(k)=a(k)+b(k)`$ | This is a physical occupation damping rate; it is not identified with the full Liouvillian spectral gap. |
-| A transition probability | $`F=\langle\mathrm{FS}_N|\rho|\mathrm{FS}_N\rangle`$ | This is squared pure-target fidelity, with all occupation bits correct at once. |
+| A transition probability | $`F=\langle\mathrm{FS}_N\rvert\rho\lvert\mathrm{FS}_N\rangle`$ | This is squared pure-target fidelity, with all occupation bits correct at once. |
 | A dissipative time scale | $`\max_{k\in K_N}g(k)\le\Gamma`$ | Time cannot be shortened by multiplying all rates without limit. $`\Gamma`$ is an effective rate budget, not a microscopic bath-cost model. |
 
 The theorem assumes the effective Lindblad description. It does not derive a bath from a system-environment Hamiltonian or certify the accuracy of a weak-coupling approximation for exponentially long laboratory times.
