@@ -43,6 +43,12 @@ Start with the [scientific overview](science/README.md), or follow a specific qu
 
 The [LLM reading guide](llms.txt) maps questions to these same sources. Exact finite-size constants and conditions appear in the proof pages; the asymptotic order does not promise a useful numerical lower bound at small sizes.
 
+## Learn the result
+
+The single educational anchor is **Breuer and Petruccione, *The Theory of Open Quantum Systems* (2002)**. The [source bridge](learning/anchor_bridge.md) selects the relevant sections, translates rate and fidelity conventions, and supplies the project-specific fermionic, approximation and Jensen steps.
+
+Start with the [complete two-mode example](learning/README.md#worked-example-two-occupations-one-slow-mode), then use the [30-milestone map](learning/milestones.md): 14 background targets and 16 targets assembling the temporal argument, matching construction and scope. The [learning overview](learning/README.md) connects these routes; specialist readers can continue directly to the science pages above.
+
 ## Reproduce the checks
 
 From the repository root:

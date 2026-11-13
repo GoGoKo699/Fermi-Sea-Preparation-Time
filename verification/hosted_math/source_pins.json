@@ -1,0 +1,16 @@
+{
+  "files": {
+    "capture_hosted_math.cjs": {
+      "git_blob": "6f36ee03223a82d0075da2fe903f21bc5a45a75b",
+      "sha256": "c96f5c769ef62711137fc4d75e110cfb40c0db149c87590cdfb463b69a648b54"
+    },
+    "probe_hosted_math.cjs": {
+      "git_blob": "f83ea9da799bee0b53bd5c57315ae2b4b2d9de43",
+      "sha256": "cf2374791bef13f29ce254179ea00aa1c38943272fc1881ec8c188876c22f631"
+    },
+    "check_rendered_math.py": {
+      "git_blob": "1d3bf9810d0dfadb844a48b354af80f9b66924bc",
+      "sha256": "edbc2d72af94e96b78166d74b66fcea150134f2f3ebaaea121e9057768e1dbfe"
+    }
+  }
+}
