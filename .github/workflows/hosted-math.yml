@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
-      SCIENCE_REVISION: bd6fecbf4ed9341e16dde9172b6cd890b49cee5c
+      SCIENCE_REVISION: a0b430fe67a3b268609c1a4f8561d5ab9fc9d79f
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -34,7 +34,6 @@ jobs:
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
         run: |
-          node verification/hosted_ci/probe_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository GoGoKo699/Fermi-Sea-Preparation-Time --revision "$SCIENCE_REVISION" --page science/paired_reservoirs.md --output "$RUNNER_TEMP/hosted-probe"
           node verification/hosted_ci/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository GoGoKo699/Fermi-Sea-Preparation-Time --revision "$SCIENCE_REVISION" --output "$RUNNER_TEMP/hosted-math"
       - name: Retain evidence
         if: always()
@@ -43,7 +42,6 @@ jobs:
           name: hosted-math-full-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/hosted-math
-            ${{ runner.temp }}/hosted-probe
           if-no-files-found: error
           retention-days: 7
           compression-level: 6
