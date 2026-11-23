@@ -1,57 +1,49 @@
-name: Hosted mathematics
-
+name: Hosted math recovery
 on:
   pull_request:
-    paths:
-      - '**.md'
-      - 'verification/hosted_math/**'
-      - '.github/workflows/hosted-math.yml'
-
+    types: [opened, synchronize, reopened]
 permissions:
   contents: read
-
 concurrency:
-  group: hosted-math-${{ github.event.pull_request.number }}
+  group: hosted-math-review-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   capture:
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: github.repository == 'GoGoKo699/Fermi-Sea-Preparation-Time'
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
-      CAPTURE_REVISION: ${{ github.event.pull_request.head.sha }}
+      SCIENCE_REVISION: bd6fecbf4ed9341e16dde9172b6cd890b49cee5c
     steps:
-      - name: Check out the exact proposed source
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ env.CAPTURE_REVISION }}
+          fetch-depth: 0
           persist-credentials: false
-      - name: Set up Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: '22'
-      - name: Install the capture runtime
+      - name: Verify collector bytes
         run: |
-          npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
-          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
-      - name: Probe inline display and table mathematics
+          sha256sum --check <<'HASHES'
+          b3d8a377bc74d0b682a85a1933cf8a55eabcd924c43e6ab4d57270e182e63b14  verification/hosted_ci/capture_hosted_math.cjs
+          edbc2d72af94e96b78166d74b66fcea150134f2f3ebaaea121e9057768e1dbfe  verification/hosted_ci/check_rendered_math.py
+          cf2374791bef13f29ce254179ea00aa1c38943272fc1881ec8c188876c22f631  verification/hosted_ci/probe_hosted_math.cjs
+          HASHES
+      - name: Install isolated browser dependencies
         run: |
-          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
-          node verification/hosted_math/probe_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$CAPTURE_REVISION" --page README.md --output "$RUNNER_TEMP/hosted-probe-readme"
-          node verification/hosted_math/probe_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$CAPTURE_REVISION" --page verification/README.md --output "$RUNNER_TEMP/hosted-probe-table"
-      - name: Compare every hosted mathematical expression
+          npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund playwright@1.56.1 mathjax-full@3.2.1
+          "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Capture pinned GitHub mathematics
+        env:
+          NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
         run: |
-          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
-          node verification/hosted_math/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$CAPTURE_REVISION" --output "$RUNNER_TEMP/hosted-math"
-      - name: Retain the actual captures and comparison reports
+          node verification/hosted_ci/probe_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository GoGoKo699/Fermi-Sea-Preparation-Time --revision "$SCIENCE_REVISION" --page science/paired_reservoirs.md --output "$RUNNER_TEMP/hosted-probe"
+          node verification/hosted_ci/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository GoGoKo699/Fermi-Sea-Preparation-Time --revision "$SCIENCE_REVISION" --output "$RUNNER_TEMP/hosted-math"
+      - name: Retain evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: hosted-math-${{ env.CAPTURE_REVISION }}
+          name: hosted-math-full-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/hosted-math
-            ${{ runner.temp }}/hosted-probe-readme
-            ${{ runner.temp }}/hosted-probe-table
+            ${{ runner.temp }}/hosted-probe
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 7
+          compression-level: 6
