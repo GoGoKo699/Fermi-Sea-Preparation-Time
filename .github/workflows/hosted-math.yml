@@ -30,26 +30,11 @@ jobs:
         run: timeout 120 npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund --fetch-retries=1 playwright@1.56.1 mathjax-full@3.2.1
       - name: Install pinned Chromium using runner system libraries
         run: timeout 120 "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install chromium
-      - name: Capture and resume only transient transport interruptions
+      - name: Check the repaired display at both widths
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
         run: |
-          set +e
-          previous=''
-          result=1
-          for attempt in 1 2 3; do
-            output="$RUNNER_TEMP/hosted-attempt-${attempt}"
-            resume=()
-            if [ -n "$previous" ]; then resume=(--resume-from "$previous"); fi
-            node verification/hosted_ci/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$SCIENCE_REVISION" --output "$output" "${resume[@]}"
-            result=$?
-            if [ "$result" -eq 0 ]; then break; fi
-            python3 -c 'import json,sys; issues=json.load(open(sys.argv[1]))["failures"]; sys.exit(0 if any(": transport_failure:" in x for x in issues) and not any(": verification_failure:" in x for x in issues) else 1)' "$output/hosted-report.json"
-            if [ "$?" -ne 0 ]; then break; fi
-            previous="$output"
-          done
-          mv "$output" "$RUNNER_TEMP/hosted-math"
-          exit "$result"
+          node verification/hosted_ci/probe_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$SCIENCE_REVISION" --page science/paired_reservoirs.md --output "$RUNNER_TEMP/hosted-math"
       - name: Retain evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
