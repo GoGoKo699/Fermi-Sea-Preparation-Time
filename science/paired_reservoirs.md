@@ -8,7 +8,7 @@ Let $`N=4M+2`$ and fill the momenta with $`\cos k>0`$ on the periodic ring, with
 \log(1+\Gamma t)\ge c_f [\log S]^3.
 ```
 
-For polynomial normalized time $`\Gamma t\le N^p`$ with fixed $`p>0`$, this gives $`R_J+1\ge N\exp[-O_{f,p}((\log N)^{1/3})]`$ (also valid if $`S<S_f`$). For each fixed $`0<\epsilon<1`$, any $`R_J\le N^{1-\epsilon}`$ entails cubic-logarithmic normalized log-time. The inherited $`O((\log N)^2)`$-radius separate gain/loss filters attain the same time order for every budget from a sufficiently large constant times $`(\log N)^2`$ up to $`N^{1-\epsilon}`$. At radius $`N/2`$, inverse discrete Fourier transforms of the two occupation masks give exact rate-filter preparation in $`O_f(\Gamma^{-1}\log N)`$, the unrestricted-radius optimal time order. The smallest radius that allows polynomial time remains open up to the displayed subpolynomial factor.
+For polynomial normalized time $`\Gamma t\le N^p`$ with fixed $`p>0`$, this gives $`R_J+1\ge N\exp[-O_{f,p}((\log N)^{1/3})]`$ (also valid if $`S\lt S_f`$). For each fixed $`0<\epsilon<1`$, any $`R_J\le N^{1-\epsilon}`$ entails cubic-logarithmic normalized log-time. The inherited $`O((\log N)^2)`$-radius separate gain/loss filters attain the same time order for every budget from a sufficiently large constant times $`(\log N)^2`$ up to $`N^{1-\epsilon}`$. At radius $`N/2`$, inverse discrete Fourier transforms of the two occupation masks give exact rate-filter preparation in $`O_f(\Gamma^{-1}\log N)`$, the unrestricted-radius optimal time order. The smallest radius that allows polynomial time remains open up to the displayed subpolynomial factor.
 
 The [stationary companion result](https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/main/science/jump_radius.md) allows unrestricted jump and Hamiltonian strengths. If there is a unique physical stationary state with overlap at least $`f`$, then $`R_J=\Omega_f((\log N)^2)`$ even with unrestricted translation-invariant quadratic Hamiltonian. The existing filters give the matching order. The same radius lower bound applies under finite all-input success. The temporal result needs neither uniqueness nor convergence as a hypothesis.
 
@@ -48,7 +48,7 @@ for every distinct pair. This uses an even observable directly on physical densi
 
 ## 3. Taylor approximation near the Fermi crossing
 
-Assume $`S=N/(R_J+1)`$ is sufficiently large. For either real rate polynomial $`p=a,b`$, trigonometric Bernstein gives $`\|p'\|_\infty\le2R_J\|p\|_\infty`$ on the circle. A maximum is within $`\pi/N`$ of a sampled point, so $`\|p\|_\infty\le2\Gamma`$. Iteration bounds derivative order $`j`$ by $`2\Gamma(2R_J)^j`$. In $`q=k-\pi/2`$, on the real window $`|q|\le\sqrt S/N`$, the order-$`m`$ Taylor polynomials $`T_a,T_b`$ have uniform error at most
+Assume $`S=N/(R_J+1)`$ is sufficiently large. For either real rate polynomial $`p=a,b`$, trigonometric Bernstein gives $`\sup_k|p'(k)|\le2R_J\sup_k|p(k)|`$ on the circle. A maximum is within $`\pi/N`$ of a sampled point, so $`\sup_k|p(k)|\le2\Gamma`$. Iteration bounds derivative order $`j`$ by $`2\Gamma(2R_J)^j`$. In $`q=k-\pi/2`$, on the real window $`|q|\le\sqrt S/N`$, the order-$`m`$ Taylor polynomials $`T_a,T_b`$ have uniform error at most
 
 ```math
 \eta=2\Gamma(2/\sqrt S)^{m+1}\le2\Gamma S^{-(m+1)/3}\qquad(S\ge64).
