@@ -27,10 +27,10 @@ jobs:
           edbc2d72af94e96b78166d74b66fcea150134f2f3ebaaea121e9057768e1dbfe  verification/hosted_ci/check_rendered_math.py
           cf2374791bef13f29ce254179ea00aa1c38943272fc1881ec8c188876c22f631  verification/hosted_ci/probe_hosted_math.cjs
           HASHES
-      - name: Install isolated browser dependencies
-        run: |
-          npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund playwright@1.56.1 mathjax-full@3.2.1
-          "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Install the pinned collector packages
+        run: timeout 120 npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund --fetch-retries=1 playwright@1.56.1 mathjax-full@3.2.1
+      - name: Install pinned Chromium using runner system libraries
+        run: timeout 120 "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install chromium
       - name: Recover previous exact-source capture receipts
         env:
           GH_TOKEN: ${{ github.token }}
