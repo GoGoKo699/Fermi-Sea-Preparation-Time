@@ -25,16 +25,16 @@ The quadratic Hamiltonian is a particle-number-preserving form in this Nambu blo
 At a stationary block, diagonalize $`M`$ with eigenvalues $`m_i`$. The coherent commutator has zero diagonal, and $`G_{ii}=m_iD_{ii}`$. Positivity of $`G`$ gives $`|G_{ij}|\le\sqrt{G_{ii}G_{jj}}`$, and Cauchy–Schwarz yields for any vector $`v`$,
 
 ```math
-v^\dagger Gv\le(\textstyle\sum_i|v_i|\sqrt{m_i D_{ii}})^2\le(v^\dagger Mv)\operatorname{Tr}D.
+v^\dagger Gv\le(\sum_i|v_i|\sqrt{m_i D_{ii}})^2\le(v^\dagger Mv)\mathrm{Tr}D.
 ```
 
-The same argument with $`I-M`$ and $`B`$ gives $`B\preceq(\operatorname{Tr}D)(I-M)`$. Set
+The same argument with $`I-M`$ and $`B`$ gives $`B\preceq(\mathrm{Tr}D)(I-M)`$. Set
 
 ```math
 a(k)=G_{11}+B_{22}=\sum_\mu (|v_\mu(k)|^2+|v_\mu(-k)|^2),\qquad b(k)=B_{11}+G_{22}=\sum_\mu (|u_\mu(k)|^2+|u_\mu(-k)|^2).
 ```
 
-Both are nonnegative trigonometric polynomials of degree at most $`2R_J`$, with $`a+b=g=\operatorname{Tr}D`$. If the physical pair is filled, the target Nambu covariance is $`\mathrm{diag}(1,0)`$, so the wrong rate $`b`$ is at most $`g[(1-M_{11})+M_{22}]`$. If it is empty, the target is $`\mathrm{diag}(0,1)`$, and the wrong rate $`a`$ is at most $`g[M_{11}+(1-M_{22})]`$. Thus the scalar effective occupation $`a/g`$ has error at most the **sum** of wrong physical occupation probabilities in its pair. If $`F_{\mathcal B}`$ is stationary squared overlap on a pair $`\mathcal B`$, this sum is at most $`2(1-F_{\mathcal B})`$ because the target projector lies under either correct-occupation projector. On any distinct collection of pairs the aggregate scalar error is at most $`E=-2\log f`$, by $`F=\prod_{\mathcal B} F_{\mathcal B}`$. The scalar occupation is a bound on dissipative selectivity and has no claim to reproduce the true paired dynamics.
+Both are nonnegative trigonometric polynomials of degree at most $`2R_J`$, with $`a+b=g=\mathrm{Tr}D`$. If the physical pair is filled, the target Nambu covariance is $`\mathrm{diag}(1,0)`$, so the wrong rate $`b`$ is at most $`g[(1-M_{11})+M_{22}]`$. If it is empty, the target is $`\mathrm{diag}(0,1)`$, and the wrong rate $`a`$ is at most $`g[M_{11}+(1-M_{22})]`$. Thus the scalar effective occupation $`a/g`$ has error at most the **sum** of wrong physical occupation probabilities in its pair. If $`F_{\mathcal B}`$ is stationary squared overlap on a pair $`\mathcal B`$, this sum is at most $`2(1-F_{\mathcal B})`$ because the target projector lies under either correct-occupation projector. On any distinct collection of pairs the aggregate scalar error is at most $`E=-2\log f`$, by $`F=\prod_{\mathcal B} F_{\mathcal B}`$. The scalar occupation is a bound on dissipative selectivity and has no claim to reproduce the true paired dynamics.
 
 ## 2. Pair parity is a physical time witness
 
