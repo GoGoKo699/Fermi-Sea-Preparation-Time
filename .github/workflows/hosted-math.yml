@@ -4,7 +4,6 @@ on:
     types: [opened, synchronize, reopened]
 permissions:
   contents: read
-  actions: read
 concurrency:
   group: hosted-math-review-${{ github.ref }}
   cancel-in-progress: true
@@ -14,7 +13,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
-      SCIENCE_REVISION: a0b430fe67a3b268609c1a4f8561d5ab9fc9d79f
+      SCIENCE_REVISION: 1bb428334c9f960f2fa2435a98f0ab987570dc7c
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -31,17 +30,26 @@ jobs:
         run: timeout 120 npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund --fetch-retries=1 playwright@1.56.1 mathjax-full@3.2.1
       - name: Install pinned Chromium using runner system libraries
         run: timeout 120 "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install chromium
-      - name: Recover previous exact-source capture receipts
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh run download 45185476409 --repo "$GITHUB_REPOSITORY" --name "hosted-math-full-45185476409" --dir "$RUNNER_TEMP/prior-hosted"
-          test -f "$RUNNER_TEMP/prior-hosted/capture-state.json"
-      - name: Capture pinned GitHub mathematics
+      - name: Capture and resume only transient transport interruptions
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
         run: |
-          node verification/hosted_ci/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository GoGoKo699/Fermi-Sea-Preparation-Time --revision "$SCIENCE_REVISION" --resume-from "$RUNNER_TEMP/prior-hosted" --output "$RUNNER_TEMP/hosted-math"
+          set +e
+          previous=''
+          result=1
+          for attempt in 1 2 3; do
+            output="$RUNNER_TEMP/hosted-attempt-${attempt}"
+            resume=()
+            if [ -n "$previous" ]; then resume=(--resume-from "$previous"); fi
+            node verification/hosted_ci/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$SCIENCE_REVISION" --output "$output" "${resume[@]}"
+            result=$?
+            if [ "$result" -eq 0 ]; then break; fi
+            python3 -c 'import json,sys; issues=json.load(open(sys.argv[1]))["failures"]; sys.exit(0 if any(": transport_failure:" in x for x in issues) and not any(": verification_failure:" in x for x in issues) else 1)' "$output/hosted-report.json"
+            if [ "$?" -ne 0 ]; then break; fi
+            previous="$output"
+          done
+          mv "$output" "$RUNNER_TEMP/hosted-math"
+          exit "$result"
       - name: Retain evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
