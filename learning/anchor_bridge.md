@@ -1,6 +1,6 @@
 # From open-system dynamics to the Fermi-sea time bound
 
-The single educational anchor is **H.-P. Breuer and F. Petruccione, *The Theory of Open Quantum Systems* (Oxford University Press, 2002)**. Its statistical description of states, quantum operations and Markovian master equations supplies the opening language. The fermionic reduction, spatial-filter problem and weighted-root converse are developed in this project.
+The single educational anchor is **H.-P. Breuer and F. Petruccione, *The Theory of Open Quantum Systems* (Oxford University Press, 2002)**. Its statistical description of states, quantum operations and Markovian master equations supplies the opening language. The project develops the fermionic reduction, spatial-filter problem, and the weighted-root and pair-parity time bounds.
 
 The [publisher's book record](https://academic.oup.com/book/27757) provides an access route. Oxford's online record is dated 2007 and identifies the paperback ISBN 9780199213900; the selected anchor remains the 2002 book, ISBN 9780198520634. Section identifiers below were checked against the published contents, with the publisher's chapter records confirming their subjects. They are reading pointers, not a claim that the textbook proves the new theorem or that every chapter is required.
 
@@ -13,6 +13,7 @@ The [publisher's book record](https://academic.oup.com/book/27757) provides an a
 | Physical quantum maps | §§2.4.2–2.4.3 | Complete positivity is the appropriate consistency condition for open-system evolution. |
 | State evolution versus observable evolution | §§3.1.2–3.1.3 | The adjoint evolution of the target projector exposes the exact worst input. |
 | A fixed Markovian generator | §§3.2.1–3.2.3 | A semigroup, its Lindblad generator and its adjoint give the dynamics assumed in the model. |
+| Relaxation to a stationary state | §3.3.2 | A stationary Gaussian input must meet the same whole-state target as other physical inputs. An initially odd momentum pair exposes the time needed to approach it. |
 | A familiar elementary decay model | §3.4.2, optional analogy | One fermionic occupation has two values, but the many-mode fermionic channel must still be treated using the canonical anticommutation relations. |
 
 Publisher chapter entries: [Quantum Probability, Chapter 2](https://doi.org/10.1093/acprof:oso/9780199213900.003.02) and [Quantum Master Equations, Chapter 3](https://doi.org/10.1093/acprof:oso/9780199213900.003.03). These identify the same anchor. Research papers in [related work](../references/RELATED_WORK.md) provide attribution and scientific comparisons, rather than additional educational anchors.
@@ -46,7 +47,7 @@ The ratio $`a/(a+b)`$ fixes the destination; the sum $`g=a+b`$ fixes occupation 
 | --- | --- | --- |
 | Reduced density matrix | $`\rho`$ may be any physical fermionic state, not only a Gaussian state. | Solving covariance dynamics alone would not justify the stated all-input score. |
 | A Markovian semigroup | $`e^{t\mathcal L}`$ with one time-independent generator | Intermediate controls, feedback and time dependence are outside the result. |
-| Hamiltonian plus dissipator | A number-conserving translation-invariant quadratic $`H`$, and separate linear gain/loss jumps | In momentum space $`H`$ commutes with every occupation and cannot speed this score. Pairing is outside this temporal proof. |
+| Hamiltonian plus dissipator | A number-conserving translation-invariant quadratic $`H`$, and separate linear gain/loss jumps | In the separate gain/loss calculation $`H`$ commutes with every occupation. The [paired theorem](../science/paired_reservoirs.md) uses physical pair parity. |
 | Relaxation rate | $`g(k)=a(k)+b(k)`$ | This is a physical occupation damping rate; it is not identified with the full Liouvillian spectral gap. |
 | A transition probability | $`F=\langle\mathrm{FS}_N\rvert\rho\lvert\mathrm{FS}_N\rangle`$ | This is squared pure-target fidelity, with all occupation bits correct at once. |
 | A dissipative time scale | $`\max_{k\in K_N}g(k)\le\Gamma`$ | Time cannot be shortened by multiplying all rates without limit. $`\Gamma`$ is an effective rate budget, not a microscopic bath-cost model. |
@@ -128,4 +129,6 @@ At fixed whole-state overlap $`f\in(0,1)`$, every successful device in the state
 
 At an available radius of sufficiently large logarithm-squared order, the [inherited geometric-root reservoir](../science/construction.md) attains the same cubic-logarithmic order for the logarithm of preparation time. Thus its slowdown is necessary for this reservoir class, not merely an unfortunate coefficient choice. The optimized time retains that order throughout the feasible radius-budget window below cubic-logarithmic order stated in the [converse](../science/time_converse.md#optimizing-under-a-radius-budget).
 
-Polynomial time consequently needs at least cubic-logarithmic radius. An attaining polynomial-time construction at that radius, arbitrary pairing dynamics, extra cell modes and general preparation architectures remain outside the result. The [limitations](../science/limitations.md) keep these distinctions with the claim. The [milestone map](milestones.md) ends by assembling this result, its inherited foundations and its precise physical scope.
+For [paired reservoirs](../science/paired_reservoirs.md), particle number within the physical pair can change coherently. Pair **parity** still commutes with the Hamiltonian. The target fills both momenta or empties both, so an initially odd pair must receive a jump before it can contribute to the target. The gain and loss covariance matrices determine a scalar stationary error budget even though the time-dependent occupation equations do not close separately. Combining that error budget with the parity bound lets a short Taylor window replace the fixed-disk Jensen step.
+
+At fixed overlap this proves $`\log(1+\Gamma t)\ge c_f[\log(N/(R_J+1))]^3`$ once $`N/(R_J+1)`$ is large. Thus polynomial time requires jump support reaching a radius of at least $`N\exp[-O((\log N)^{1/3})]`$, up to the additive one in the theorem. Full-ring jumps give a logarithmic-time endpoint. The [limitations](../science/limitations.md) and [milestone map](milestones.md) connect both time statements and their scope. Fermionic pair parity and the stationary Gram inequality are supplied by the project, building on the textbook's Markovian generator and relaxation framework in §§3.2.2 and 3.3.2.

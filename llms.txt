@@ -1,13 +1,13 @@
 # Fermi-Sea Preparation Time
 
-Question: how long must a bounded-rate stationary finite-range fermionic gain/loss reservoir take to prepare a critical Fermi sea at fixed whole-state fidelity?
+Question: how long must an autonomous, translation-invariant fermionic reservoir with strictly finite-range jumps take to prepare a critical Fermi sea at fixed whole-state fidelity?
 
-Read science/model.md for allowed operations, one-mode periodic geometry, exact gain/loss rates, all-physical-input dynamics and fidelity/time definitions.
-Read science/root_budget.md for the finite-grid aggregate error, inherited root deletions and new weighted root-potential estimate.
-Read science/time_converse.md for explicit finite-size conditions/constants, complex polynomial growth, Jensen attenuation, the near-Fermi slow mode and asymptotic corollaries.
-Read science/construction.md for inherited matching geometric-root filters, actual rate normalization and sufficient finite precision/time.
-Read science/interpretation.md and science/limitations.md for physical consequences, companion relationship and boundaries. Pairing is outside the temporal theorem, even though the companion spatial theorem permits it.
-Read references/RELATED_WORK.md for primary-source statements, inspected versions and attribution.
-Read verification/README.md and verification/run_all.py for reproducible diagnostics. Finite checks are not proofs or priority certification.
+Read science/paired_reservoirs.md for the main pairing-inclusive theorem, exact resource normalization, scalar Gram inequality, pair-parity witness, Taylor and root-deletion proof, and near-linear necessary radius for polynomial time. The translation-invariant quadratic Hamiltonian is unrestricted in range and strength.
+Read science/model.md for the separate gain/loss class, its per-mode cap and exact all-input occupation dynamics.
+Read science/root_budget.md and science/time_converse.md for the narrower explicit finite-size weighted-root and Jensen estimates.
+Read science/construction.md for the inherited geometric-root filters, sufficient time and coefficient precision.
+Read science/interpretation.md and science/limitations.md for the operational scope and companion result.
+Read references/RELATED_WORK.md for primary sources and attribution.
+Read verification/README.md and verification/run_all.py for numerical checks, including mixed linear jumps and strong pairing in two-mode Fock space.
 
-For self-directed learning, start learning/README.md, then learning/anchor_bridge.md and learning/milestones.md. The only educational anchor is Breuer–Petruccione, The Theory of Open Quantum Systems (2002); exactly M01–M30 provide14 background and16 narrative targets. The bridge supplies the project-specific fermionic/filter/root/Jensen steps and a worked all-input two-mode example.
+For self-directed learning, use learning/README.md, learning/anchor_bridge.md and learning/milestones.md. The educational anchor is Breuer and Petruccione, The Theory of Open Quantum Systems (2002). The map retains M01–M30 and follows the narrow solvable setting into the paired theorem.

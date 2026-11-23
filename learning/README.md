@@ -11,10 +11,11 @@ The learning route uses one anchor: **Heinz-Peter Breuer and Francesco Petruccio
 | One mode | A gain rate fixes filling, a loss rate fixes emptying, and their sum fixes occupation relaxation. | The worked example below; [bridge](anchor_bridge.md#one-mode-dynamics-and-the-conventions-that-matter) |
 | The full register | A good average occupation is different from a good probability of the entire Fermi-sea pattern. The worst input can be identified exactly. | [Model](../science/model.md#complete-register-score) |
 | Spatial support | A finite-support jump becomes a finite-degree Fourier polynomial. Stationary occupations depend on a ratio of rates. | [Bridge](anchor_bridge.md#from-spatial-support-to-a-polynomial-question); [rate polynomials](../science/time_converse.md#rate-polynomials-and-their-finite-ring-norm) |
-| The new obstruction | Accuracy across many scales forces roots deep near a Fermi point; bounded physical rates then force slow relaxation. | [Weighted root budget](../science/root_budget.md); [time converse](../science/time_converse.md) |
-| The complete result | The inherited reservoir attains the same cubic-logarithmic time order that every admissible compact reservoir must pay. | [Construction](../science/construction.md); [limitations](../science/limitations.md) |
+| The gain/loss obstruction | Accuracy across many scales forces roots deep near a Fermi point; bounded physical rates then force slow relaxation. | [Weighted root budget](../science/root_budget.md); [time converse](../science/time_converse.md) |
+| Pairing and the larger range law | Stationarity controls the wrong jump rate in each pair. From an odd input, pair parity turns total jump strength into a time witness. | [Paired theorem](../science/paired_reservoirs.md) |
+| The complete result | The inherited compact reservoir attains the lower-bound order throughout the fixed sublinear-power radius regime where the filter fits. | [Construction](../science/construction.md); [limitations](../science/limitations.md) |
 
-The background phase ends by assembling the physical task and the polynomial representation. The narrative phase follows the weighted-root mechanism through its physical rate bound, matching construction and scope. The specialist proof pages remain the authority for constants and finite-size conditions.
+The background phase ends by assembling the physical task and the polynomial representation. The narrative phase follows the weighted-root mechanism through its physical rate bound and matching construction, then uses pair parity to reach the wider theorem. The specialist proof pages remain the authority for constants and finite-size conditions.
 
 ## Worked example: two occupations, one slow mode
 
@@ -86,12 +87,10 @@ The example explains the dynamics and scoring. It is not a small-size demonstrat
 
 ## From two modes to a critical sea
 
-In the ring, the desired bit changes across two Fermi points. A reservoir must sharply separate occupied and empty momenta while keeping its real-space jumps compact. The main theorem shows that all admissible gain/loss filters pay a severe time cost at logarithm-squared radius:
+In the ring, the desired occupation changes at the Fermi points. The [gain/loss proof](../science/time_converse.md) gives an explicit finite-size lower bound. An inherited geometric-root reservoir attains the compact-radius order
 
 ```math
 \log(1+\Gamma T_{\mathrm{opt}})=\Theta((\log N)^3).
 ```
 
-Here the target whole-state overlap stays fixed in $`(0,1)`$, and an attaining radius coefficient must be sufficiently large. The more general necessary inequality is $`\log(1+\Gamma t)+CR\ge c(\log N)^3`$. It requires at least cubic-logarithmic radius for polynomial preparation time, without establishing a polynomial-time construction there.
-
-The result concerns time-independent, one-site-translation-invariant separate linear gain/loss jumps, one physical fermion mode per cell, number-conserving quadratic coherent dynamics and bounded momentum occupation rates. Pairing, extra modes, feedback and time-dependent control are different architectures. The [bridge](anchor_bridge.md#the-bridge-ends-at-the-actual-theorem) connects these qualifications to the proof rather than treating them as optional details.
+The [paired theorem](../science/paired_reservoirs.md) allows mixed jumps and arbitrary translation-invariant pairing. It uses a fixed overlap from every physical input to show the same cubic-logarithmic order across all fixed sublinear powers of the radius budget, once the compact construction fits. The [source bridge](anchor_bridge.md#the-bridge-ends-at-the-actual-theorem) connects the separate gain/loss calculation to the pairing proof.

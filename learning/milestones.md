@@ -234,18 +234,18 @@ Dependencies below point only backward. Source pointers identify where to develo
 - **Conceptual connection:** The enormous time is intrinsic to all admissible compact reservoirs, rather than an avoidable defect of one inherited filter.
 - **Source pointers:** [Optimized-time definition](../science/model.md#complete-register-score); [main result](../science/model.md#main-result); [radius-budget optimization](../science/time_converse.md#optimizing-under-a-radius-budget).
 
-### M29 — What a larger radius could change
+### M29 — Pair parity bounds the time
 
-- **Central question:** Which conclusion follows about polynomial preparation time, and which frontier remains open?
-- **Understanding target:** Derive the necessary cubic-logarithmic radius from the general resource inequality, distinguish necessity from attainment, and place full-ring momentum-selective preparation at the separate large-range endpoint.
-- **Dependencies and story role:** M08, M24 and M28; connects the compact optimum to the wider design question without extending the theorem beyond its proof.
-- **Conceptual connection:** Increasing the spatial budget may remove this obstruction, but the present theorem supplies no matching polynomial-time design at the necessary radius.
-- **Source pointers:** [General radius-time consequence](../science/time_converse.md#cubic-logarithm-and-the-radius-time-consequence); [reservoir-design implications](../science/interpretation.md#what-this-changes-for-reservoir-design); [larger-range limits](../science/limitations.md#larger-range-precision-and-implementation).
+- **Central question:** What can witness slow preparation when the Hamiltonian no longer preserves single-mode occupations?
+- **Understanding target:** Use the stationary covariance Gram inequality to bound scalar wrong-direction jump rates, and show that an odd momentum pair needs a jump to reach the even target pair.
+- **Dependencies and story role:** M06, M08, M12 and M23; extends the operational witness from separate occupations to general paired jumps.
+- **Conceptual connection:** Stationarity supplies the selectivity constraint, while parity bounds the finite-time event without a Liouvillian gap identification.
+- **Source pointers:** [Scalar rate score](../science/paired_reservoirs.md#1-a-scalar-rate-score-for-a-paired-reservoir), [pair-parity witness](../science/paired_reservoirs.md#2-pair-parity-is-a-physical-time-witness) and [finite Fock-space check](../verification/README.md#what-is-checked).
 
-### M30 — The full scientific account and its boundary
+### M30 — The optimized time and its range boundary
 
-- **Central question:** What can now be concluded about preparing a critical Fermi sea with a compact autonomous reservoir?
-- **Understanding target:** Present one connected account of the task, allowed dynamics, global score, new weighted-root/attenuation converse, inherited matching construction and optimized time law; state the unresolved leading constant, larger-range frontier and excluded architectures.
-- **Dependencies and story role:** M01–M29; closes the narrative phase by integrating the physical meaning, attribution and scope of the result.
-- **Conceptual connection:** Stationary spatial feasibility and operational preparation time are distinct resources, and the theorem settles their compact-radius relation within a precisely stated gain/loss model.
-- **Source pointers:** [Scientific overview](../science/README.md); [interpretation](../science/interpretation.md); [limitations](../science/limitations.md); [related work](../references/RELATED_WORK.md); [anchor bridge](anchor_bridge.md).
+- **Central question:** How far must jumps reach to allow polynomial preparation time, and where is that boundary still open?
+- **Understanding target:** Explain how the rate lower bound from parity lets a local Taylor approximation transfer the stationary odds to a polynomial pair, whose root budget yields the time lower bound. Distinguish the fixed sublinear-power window from the full-ring logarithmic-time construction.
+- **Dependencies and story role:** M15–M16 and M25–M29; ends with the scope of both the finite-size gain/loss theorem and the paired-reservoir theorem.
+- **Conceptual connection:** The minimum radius for stationary accuracy is logarithm-squared. Polynomial all-input preparation requires a radius within a subpolynomial factor of the ring size.
+- **Source pointers:** [Taylor window](../science/paired_reservoirs.md#3-taylor-approximation-near-the-fermi-crossing), [constructive endpoints](../science/paired_reservoirs.md#4-matching-constructions), [limitations](../science/limitations.md), [related work](../references/RELATED_WORK.md) and [anchor bridge](anchor_bridge.md).

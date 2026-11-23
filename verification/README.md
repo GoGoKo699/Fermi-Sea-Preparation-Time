@@ -7,13 +7,14 @@ python3 -m pip install -r verification/requirements.txt
 OPENBLAS_NUM_THREADS=1 python3 verification/run_all.py
 ```
 
-The command writes [results.json](results.json). A different destination can be supplied with `--output PATH`. The suite has no random inputs and normally takes a few seconds. The report records the interpreter and dependency versions used.
+The command writes [results.json](results.json). A different destination can be supplied with `--output PATH`. The paired diagnostic uses a fixed seed. The suite normally takes a few seconds. The report records the interpreter and dependency versions used.
 
 ## What is checked
 
 | Diagnostic | Independent calculation | Scope |
 |---|---|---|
 | Occupation dynamics and target overlap | A full Jordan–Wigner Fock-space Lindblad matrix, including Fourier jump-label mixing and a number-conserving Hamiltonian, is exponentiated and compared with the population equations. | Three modes, five times, including a correlated non-Gaussian input. Three modes is an algebra check, rather than an example on the theorem's $`N=4M+2`$ grid. |
+| Paired reservoir | Exact two-mode Fock dynamics tests mixed linear jumps, the Nambu covariance and stationary Gram inequalities, the scalar unwanted-rate bound, and the bound on even-pair probability from an odd input. | 64 deterministic pairs with pairing amplitudes up to $`10^8`$, evaluated at four elapsed times. |
 | Worst input | The smallest eigenvalue of the evolved target projector is compared with the complementary Fock input and the full product formula. | A matrix calculation over every input state in the small system, rather than sampling a few Gaussian inputs. |
 | Spectator reference | The full small-system channel is applied to diagonal and off-diagonal blocks of a system–reference entangled state. | Checks positivity, trace, reduction and target population. This does not assert a new diamond-distance preparation theorem. |
 | Geometric-root construction | Direct logarithmic products over all momenta are compared with an independent 80-digit nearest-mode calculation, and the worst-input overlap equation is solved in logarithmic time. | Ideal unrounded filters at $`N=66,258,1026,4098,16386`$. |
@@ -27,6 +28,8 @@ The full-channel calculation does not factor the fermionic channel into ordinary
 ## Recorded results
 
 The checked environment was Python 3.12.14, NumPy 2.3.5 and mpmath 1.3.0. The full Fock-space target-effect comparison had maximum absolute entry error below $`4\times10^{-15}`$; occupation errors were below $`2\times10^{-15}`$. The non-Gaussian input has connected occupation correlation $`1/4`$. Small negative output eigenvalues of order $`10^{-16}`$ are numerical roundoff.
+
+The paired diagnostic [also runs on its own](paired_reservoirs.py). It checks both target occupations, both matrix inequalities, and the finite-time parity bound for the physical input $`|01\rangle`$. The comparatively larger covariance stationarity residual at strong pairing reflects floating-point cancellation in the finite diagnostic.
 
 The root diagnostics use the converse's final window $`a=\lceil N^{1/3}\rceil`$ and clipping point $`\ell=x_{a-1}`$. The Jensen geometry rows test five centers across the full allowed $`[-\ell,\ell]`$ range, including its endpoints, under $`\ell\le1/16`$. The finite-certificate rows use the final $`m=\lfloor4E_f\rfloor+1`$, $`Z_N(R,f)`$ and sampling conditions directly from [the temporal converse](../science/time_converse.md); no earlier auxiliary near-Fermi scale is used.
 

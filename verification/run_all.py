@@ -15,6 +15,9 @@ from pathlib import Path
 
 import mpmath as mp
 import numpy as np
+import scipy
+
+from paired_reservoirs import run as paired_reservoirs_check
 
 
 def require(condition, message):
@@ -503,10 +506,11 @@ def main():
     report = {"schema_version": 1,
               "checked_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
               "environment": {"python": platform.python_version(), "numpy": np.__version__,
-                              "mpmath": mp.__version__},
-              "status": "passed", "randomness": "none",
+                              "mpmath": mp.__version__, "scipy": scipy.__version__},
+              "status": "passed", "randomness": "fixed seed for paired reservoirs only",
               "scientific_limit": "Finite numerical diagnostics do not prove asymptotics, arbitrary-root inequalities, or literature priority.",
               "fock_lindblad": fock_check(),
+              "paired_reservoirs": paired_reservoirs_check(),
               "geometric_root_construction": geometric_checks(),
               "weighted_root_deletion": root_diagnostics(),
               "clipping_jensen": clipping_jensen_diagnostics(),
