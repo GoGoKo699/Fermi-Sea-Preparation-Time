@@ -2,20 +2,7 @@
 
 An accurate stationary state and a useful preparation procedure impose different demands. A reservoir can have a stationary state with substantial overlap with the critical Fermi sea while approaching it extremely slowly. The present result determines whether better filter coefficients can remove that slow preparation without increasing the spatial order.
 
-They cannot within the stated autonomous gain/loss class. At fixed whole-state overlap, every successful device satisfies the radius-time inequality
-
-```math
-\log(1+\Gamma t)+C R\ge c(\log N)^3
-```
-
-for positive constants at sufficiently large sizes. In particular, every bounded-rate family with jump radius $`R\le K(\log N)^2`$, for a size-independent $`K`$, has
-
-```math
-\log\!\bigl(\Gamma t_{\mathrm{worst}}\bigr)
-=\Omega((\log N)^3).
-```
-
-The known geometric-root reservoir attains an upper bound of the same order for a sufficiently large fixed range constant. Thus the spatially optimal range order has an unavoidable preparation time $`\Gamma^{-1}\exp[\Theta((\log N)^3)]`$ in this model. Feasibility at every smaller constant $`K`$ is not asserted. The matching time order persists when the allowed radius is increased to any $`o((\log N)^3)`$ budget that already permits the construction.
+The [paired theorem](paired_reservoirs.md) makes this comparison even with an arbitrary translation-invariant quadratic Hamiltonian. At fixed whole-state overlap, the logarithm of the optimized time has order $`(\log N)^3`$ from a sufficiently large logarithm-squared radius budget up to any fixed sublinear power of $`N`$. The known geometric-root reservoir attains this order wherever its radius fits.
 
 ## The physical competition
 
@@ -29,13 +16,19 @@ g(k)=a(k)+b(k).
 
 The ratio determines the stationary occupation. The sum determines how quickly that mode forgets its initial occupation. Whole-state fidelity forces the ratio to distinguish the two sides of the Fermi point over many scales; the logarithm-squared range is enough to make that discrimination possible.
 
-The temporal converse charges the accompanying amplitude. Its weighted root estimate shows that an accurate compact filter must accumulate enough root depth near a Fermi point to suppress at least one physical rate there. Bounded overall rates prevent compensating this suppression by unlimited gain. The bounded aggregate occupation error guarantees a nearby correctly biased mode, so the small numerator also gives a small total damping rate at an actual sampled momentum.
+The [separate gain/loss converse](time_converse.md) charges the accompanying amplitude. Its weighted root estimate shows that an accurate compact filter must accumulate enough root depth near a Fermi point to suppress at least one physical rate there. Bounded overall rates prevent compensating this suppression by unlimited gain. The bounded aggregate occupation error guarantees a nearby correctly biased mode, so the small numerator also gives a small total damping rate at an actual sampled momentum.
 
 This is a constraint on all admissible filters, including size-dependent complex coefficients, many translated jump families, and common polynomial factors. It is not inferred from the behavior of one chosen construction.
 
+## Pairing and the rate bound
+
+For general linear jumps, a stationary block's covariance bounds its total wrong-direction dissipative rate. The resulting ratio of positive rate polynomials distinguishes the two sides of the Fermi point even when the Hamiltonian mixes particle and hole amplitudes. The same Hamiltonian preserves each momentum pair's physical parity. Starting a pair in an odd Fock state therefore gives a preparation-time bound in terms of its total jump rate.
+
+If the time were short, all pair rates would have to be large enough for their ratios to survive a low-order Taylor approximation on a short momentum window. The required step across the Fermi point exceeds the available polynomial degree. The [paired proof](paired_reservoirs.md) makes this contradiction quantitative.
+
 ## Why one slow mode matters
 
-The requested output is the entire Fermi sea, prepared from every physical initial state. The complementary Fock state starts every target occupation incorrectly. For separate gain/loss dynamics its target population is
+In the separate gain/loss class, the requested output is the entire Fermi sea, prepared from every physical initial state. The complementary Fock state starts every target occupation incorrectly. For separate gain/loss dynamics its target population is
 
 ```math
 \inf_{\rho_0}F_{\rho_0}(t)
@@ -48,14 +41,10 @@ This operational argument avoids identifying an occupation damping rate with the
 
 ## What this changes for reservoir design
 
-The [spatial companion](https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/tree/293b8e6914d8ff85ed3605d6c85dc95abfef4b61) already proves the optimal spatial order and supplies a reservoir with the stated time. The new obstruction closes the possibility that this large time is merely a poor coefficient choice. Polynomial worst-input preparation time requires at least $`\Omega((\log N)^3)`$ radius, exceeding the stationary-feasibility scale. This is a necessary condition; no polynomial-time construction at that radius is established.
-
-Increasing the range may change the answer. With full-ring support, momentum-selective gain/loss jumps can give constant damping to every mode and logarithmic all-input preparation time at fixed error. The theorem does not determine the optimal interpolation between these endpoints.
+The [stationary companion](https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/main/science/jump_radius.md) proves the minimum jump radius of order $`(\log N)^2`$ and supplies a reservoir attaining that order. Polynomial worst-input preparation time requires $`R_J+1\ge N\exp[-O((\log N)^{1/3})]`$. Full-ring momentum-selective jumps attain logarithmic time. The smallest radius allowing polynomial time lies between those two bounds.
 
 Efficient digital construction or simulation of a spectrally filtered jump is also a different resource statement. A spectral projector with favorable abstract mixing may have long spatial tails. The [related-work account](../references/RELATED_WORK.md) separates exact-target tail bounds, rapid-mixing results, the inherited rational filters, and the finite-support time optimum proved here.
 
 ## Scope of the conclusion
 
-The Hamiltonian is quadratic, translation invariant and number conserving. With one mode per cell it commutes with every momentum occupation and cannot transfer population around the slow mode. Pairing Hamiltonians, jumps mixing creation and annihilation, additional persistent modes, enlarged cells, time-dependent controls, measurements and feedback are outside the temporal theorem.
-
-The budget $`\Gamma`$ bounds each sampled total occupation damping rate. It is not a microscopic bath bandwidth, a complete gate cost, or a laboratory resource estimate. The result supplies a mathematical preparation-time obstruction under that budget. See the [model](model.md), [converse](time_converse.md), [matching construction](construction.md), and [limitations](limitations.md) for the complete statement.
+The main result allows arbitrary pairing and strength in a one-site-translation-invariant quadratic Hamiltonian. Its budget $`\Gamma`$ bounds the total jump amplitude squared per momentum pair. The narrower result uses number-conserving coherent dynamics, separate gain and loss and a per-momentum occupation-rate cap. Additional persistent modes, enlarged cells, time-dependent controls, measurements and feedback lie outside these models. The [limitations](limitations.md) give the complete scope.

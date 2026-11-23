@@ -1,4 +1,6 @@
-# Model and temporal preparation theorem
+# Separate gain/loss model and temporal theorem
+
+The [paired-reservoir theorem](paired_reservoirs.md) gives the broader asymptotic time bound under a per-pair rate cap. This page retains the exact all-input score and the per-momentum normalization used for the explicit finite-size converse.
 
 The task is to prepare an entire critical Fermi sea using one time-independent, translation-invariant Gaussian reservoir. The spatially economical reservoir class can stabilize an accurate stationary state, but the time required to reach that state is a separate resource.
 

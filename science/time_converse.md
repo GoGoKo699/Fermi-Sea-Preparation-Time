@@ -1,4 +1,6 @@
-# Finite-size temporal converse
+# Finite-size temporal converse for separate gain and loss
+
+The [paired-reservoir analysis](paired_reservoirs.md) covers arbitrary translation-invariant quadratic Hamiltonians and gives a stronger asymptotic range consequence. The fixed-disk argument below supplies explicit finite-size bounds in the separate gain/loss model.
 
 The [model](model.md) fixes the separate gain/loss class, physical inputs and rate normalization. This page converts the [weighted root budget](root_budget.md) into an unavoidable preparation time. It uses a small physical occupation damping rate, without identifying it with the full fermionic Liouvillian gap.
 
@@ -187,7 +189,7 @@ where the fixed $`K_0`$ is large enough for the [inherited construction](constru
 \log(1+\Gamma T_{\mathrm{opt}}(N,\mathcal R_N,f))=\Theta((\log N)^3).
 ```
 
-The universal linear tradeoff gives the lower order because $`C\mathcal R_N=o((\log N)^3)`$. The construction supplies the upper order while using only $`O((\log N)^2)`$ of the available radius. This is a matching time order throughout a radius-budget window, without a matching theorem at or beyond cubic-logarithmic radius.
+The universal linear tradeoff gives the lower order because $`C\mathcal R_N=o((\log N)^3)`$. The construction supplies the upper order while using only $`O((\log N)^2)`$ of the available radius. This argument matches time throughout that radius-budget window. The [paired-reservoir theorem](paired_reservoirs.md) uses a different normalization and extends the matching order to fixed sublinear powers of the system size.
 
 ## What the converse does and does not establish
 

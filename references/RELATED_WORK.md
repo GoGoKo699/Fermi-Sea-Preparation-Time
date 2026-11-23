@@ -1,34 +1,22 @@
 # Related work and attribution
 
-The question here is the **time required by a spatially economical reservoir**, rather than the existence of a stationary approximation. The target is the half-filled critical hopping-chain Fermi sea. The temporal theorem concerns one-site-translation-invariant, time-independent separate linear gain/loss reservoirs, one physical mode per cell, a number-conserving quadratic Hamiltonian, bounded momentum occupation rates, and fixed nonzero squared global overlap. Its precise quantifiers are in the [model](../science/model.md) and [converse](../science/time_converse.md).
+The question here is the time an autonomous finite-support reservoir needs to prepare the critical hopping-chain Fermi sea at a fixed whole-state overlap from every physical input. The [paired-reservoir theorem](../science/paired_reservoirs.md) permits pairing in the translated linear jumps and in the quadratic Hamiltonian. It bounds the jump radius and per-pair rate, with unrestricted coherent range and strength. The [separate gain/loss theorem](../science/time_converse.md) retains explicit finite-size estimates under a per-momentum rate cap.
 
 ## The spatial companion
 
-[Fermi Sea Reservoir Locality][1] establishes the minimum spatial order $`R_{\min}=\Theta((\log N)^2)`$ at fixed whole-state overlap. Its spatial converse also covers pairing Hamiltonians and general linear Gaussian jumps when coherent range is counted. Its separate gain/loss construction already has
+[Reservoir Locality][1] derives the discrete root-deletion argument and constructs strictly supported gain/loss filters that make the stationary error small at radius $`\Theta((\log N)^2)`$. Those filters have cubic-logarithmic normalized log-time. The [companion's jump-only result][1d] shows the same minimum stationary radius even when the translation-invariant quadratic Hamiltonian is unrestricted.
 
-```math
-\log(\Gamma t_{\mathrm{worst}})=\Theta((\log N)^3).
-```
-
-That time statement characterizes the construction; its preparation-cost account explicitly leaves optimization over other reservoirs open.
-
-The present work inherits the spatial scale, aggregate occupation-error consequence of global fidelity, discrete root-deletion estimate, geometric-root construction, and its time accounting. The added conclusion is a universal necessary resource inequality
-
-```math
-\log(1+\Gamma t)+C R\ge c(\log N)^3
-```
-
-for every successful device in the stated gain/loss class. It gives a matching time order at logarithm-squared range and throughout the feasible radius-budget window $`R=o((\log N)^3)`$. Polynomial preparation time requires $`R=\Omega((\log N)^3)`$; sufficiency at that larger range is not established. The temporal converse does not inherit the companion's broader pairing scope. These are complementary resource statements about the same preparation problem.
+The paired converse here uses the stationary gain and loss Gram matrices to bound dissipative selectivity and pair parity to bound finite-time preparation. Applying a local Taylor approximation and the discrete root estimate gives $`\log(1+\Gamma t)\ge c_f[\log(N/(R_J+1))]^3`$. Thus the inherited slow construction attains the optimum order throughout the fixed sublinear-power radius regime in which it fits. The original separate gain/loss converse uses a weighted root depth and Jensen attenuation to give an explicit finite-size bound for that subclass.
 
 ## Exact locality and relaxation results
 
 | Source | Operational model and established result | Relation to the present theorem |
 | --- | --- | --- |
-| Westhoff, Murciano and Moroder [2] | Exact target-preserving quadratic dynamics built from linear combinations of target Bogoliubov annihilators. Under translation invariance, momentum weights determine the relaxation rate; stronger suppression of critical algebraic jump tails forces stronger algebraic growth of preparation time. Appendix F studies specified strictly truncated filters and their overlaps. | The present stationary state may be a mixed approximation. Coefficients and jump families may vary arbitrarily with size. The lower bound optimizes over all strictly supported gain/loss filters at fixed global overlap, rather than fixing an exact-target weight profile or truncation prescription. |
-| Tang, Barad and Wen [3] | A spectral criterion for exponentially local dark-state linear jumps. Sign-changing Fermi-level crossings obstruct exact local preparation. Their end matter distinguishes efficient spectral-filter evaluation from mixing; uniform momentum weights give logarithmic mixing but need not be local. | The present finite-size problem permits approximate stationarity and growing strict support. It determines an unavoidable time cost at logarithm-squared range, rather than an exact-target analyticity obstruction. |
-| Zhan et al. [4] | Spectrally filtered Lindblad preparation, mixing-time bounds for quasifree models, and rapid mixing for specified weakly interacting gapped spin and fermion classes. The filtered jumps are constructed from Hamiltonian evolution. | These positive results do not impose the present strict-support constraint on a critical Fermi-sea gain/loss reservoir. A short abstract mixing time is not a statement that the required filtered jumps have logarithm-squared strict spatial support. |
+| Westhoff, Murciano and Moroder [2] | Exact target-preserving quadratic dynamics built from linear combinations of target Bogoliubov annihilators. Under translation invariance, momentum weights determine the relaxation rate; stronger suppression of critical algebraic jump tails forces stronger algebraic growth of preparation time. Appendix F studies specified strictly truncated filters and their overlaps. | The present stationary state may be a mixed approximation. Coefficients and jump families may vary arbitrarily with size. The lower bound optimizes over general strictly supported linear jumps at fixed global overlap and all-input time. The jumps may use any size-dependent profile. |
+| Tang, Barad and Wen [3] | A spectral criterion for exponentially local dark-state linear jumps. Sign-changing Fermi-level crossings obstruct exact local preparation. Their end matter distinguishes efficient spectral-filter evaluation from mixing; uniform momentum weights give logarithmic mixing but need not be local. | The present finite-size problem permits approximate stationarity and growing strict support. It quantifies time at fixed nonzero overlap on a growing finite ring and allows size-dependent finite-support jumps. |
+| Zhan et al. [4] | Spectrally filtered Lindblad preparation, mixing-time bounds for quasifree models, and rapid mixing for specified weakly interacting gapped spin and fermion classes. The filtered jumps are constructed from Hamiltonian evolution. | These positive results do not impose the present strict-support constraint on a critical Fermi-sea reservoir. A short abstract mixing time is not a statement that the required filtered jumps have logarithm-squared strict spatial support. |
 
-For [2], the normalization $`\lVert B\rVert_{\mathrm{op}}=1`$ makes the overall dissipative scale explicit. Equations (6)–(8) and Appendix C relate momentum-weight zeros to spatial tails and asymptotic relaxation. Appendix F explains how small amplitudes amplify truncation errors and how profile changes alter finite-size performance. The new converse allows those profile changes and all other admissible gain/loss polynomials; its clipped root-depth estimate rules out a fast optimized replacement at the stated range.
+For [2], the normalization $`\lVert B\rVert_{\mathrm{op}}=1`$ makes the overall dissipative scale explicit. Equations (6)–(8) and Appendix C relate momentum-weight zeros to spatial tails and asymptotic relaxation. Appendix F explains how small amplitudes amplify truncation errors and how profile changes alter finite-size performance. The paired converse allows those profile changes and applies uniformly to all admissible linear jump families.
 
 In [3], the jump functions used for exact locality are shared across system sizes. Its end matter gives $`G\propto hP_+`$ and a mixing bound proportional to $`\Delta_h^{-2}\log(N/\epsilon^2)`$; the uniform-weight choice $`G\propto P_+`$ instead has constant mode damping. At a sign-changing Fermi crossing the latter spectral projector is nonlocal. Neither comparison contradicts a time lower bound that simultaneously charges strict spatial support and whole-state fidelity.
 
@@ -36,7 +24,7 @@ In [3], the jump functions used for exact locality are shared across system size
 
 Root clustering and root-potential estimates are classical approximation tools. Newman's original paper [5], especially Lemma 3, supplies the continuous complex-root integral budget underlying the argument. Geometrically clustered roots give root-exponential rational approximation. Sherstov's Theorem 5.1 [6] gives sharp uniform rational sign-approximation error on an arithmetic grid; inverse-polynomial error already produces a logarithm-squared degree scale. That scale is not claimed as new approximation theory here.
 
-The discrete curved momentum grid and the total-error budget needed for a whole-state overlap are treated in the spatial companion [1]. The temporal proof adds a logarithmic weight to that root budget. It then uses standard polynomial growth estimates and Jensen's formula to turn forced root depth into attenuation of an actual gain or loss rate near a Fermi point. This controls a physical rate polynomial, including common factors and roots near sampled momenta.
+The discrete curved momentum grid and the total-error budget needed for a whole-state overlap are treated in the spatial companion [1]. The separate gain/loss proof adds a logarithmic weight to that root budget. It then uses standard polynomial growth estimates and Jensen's formula to turn forced root depth into attenuation of an actual gain or loss rate near a Fermi point. This controls a physical rate polynomial, including common factors and roots near sampled momenta.
 
 Ordinary rational approximation only controls a ratio. Here
 
@@ -46,7 +34,7 @@ n(k)=\frac{a(k)}{a(k)+b(k)},
 g(k)=a(k)+b(k).
 ```
 
-A common positive multiplier changes $`g`$ without changing $`n`$. Its realization also affects polynomial degree and hence support. Consequently an approximation-error or rational-degree bound alone does not fix the preparation time. The temporal theorem bounds the possible rate normalization of all admissible physical representatives. Restricted-denominator approximation is itself an established topic [9]; the present claim is the stated finite-grid, aggregate-error, rate-normalized preparation bound.
+A common positive multiplier changes $`g`$ without changing $`n`$. Its realization also affects polynomial degree and hence support. Consequently an approximation-error or rational-degree bound alone does not fix the preparation time. The speed requirement makes a short local approximation accurate enough relative to the rates, forcing its rational degree to be large. Restricted-denominator approximation is itself an established topic [9]; the present claim is the stated finite-grid, aggregate-error, rate-normalized preparation bound.
 
 Trefethen, Nakatsukasa and Weideman [8] explain exponential and tapered root/pole clustering using potential-theoretic models. Their work provides useful context for the construction and the root geometry. Neither the use of clustered roots nor the use of logarithmic potentials is an independent contribution of this project.
 
@@ -54,13 +42,13 @@ Trefethen, Nakatsukasa and Weideman [8] explain exponential and tapered root/pol
 
 Franco-Rubio and Cirac [7] study the same critical hopping-chain target through Gaussian fermionic matrix product states. Their rigorous inapproximability theorem requires superpolynomial Gaussian-MPS bond dimension; their CFT and numerical analysis explores sharper scales. Appendix D constructs rational momentum occupations from polynomials and uses logarithmically distributed roots. This supplies an important representational antecedent, including the filter mechanism.
 
-Virtual bond dimension, dissipative jump support and physical preparation time are different resources. The Gaussian-MPS theorem does not directly bound the minimum occupation damping rate of every bounded-strength reservoir. Conversely, the present gain/loss theorem is not a lower bound on arbitrary tensor-network descriptions, general quantum circuits, or non-Gaussian preparation.
+Virtual bond dimension, dissipative jump support and physical preparation time are different resources. The Gaussian-MPS theorem does not directly bound the minimum occupation damping rate of every bounded-strength reservoir. Our analysis concerns autonomous Gaussian Lindblad dynamics with finite-support jumps.
 
 ## References
 
 The machine-readable bibliography is [references.bib](references.bib).
 
-1. *Fermi Sea Reservoir Locality*, scientific repository, revision [293b8e6914d8ff85ed3605d6c85dc95abfef4b61][1]. See the [range converse][1a], [construction][1b], and [preparation costs][1c].
+1. *Fermi Sea Reservoir Locality*, scientific repository, revision [293b8e6914d8ff85ed3605d6c85dc95abfef4b61][1]. See the [range converse][1a], [construction][1b], [preparation costs][1c], and current [jump-only theorem][1d].
 2. P. Westhoff, S. Murciano and M. Moroder, *Locality-Preparation Time Tradeoffs in Dissipative Quantum Systems*, [arXiv:2610.13784v1][2] (2026). See the main setup, Appendix C, and Appendix F.
 3. Q. Tang, R. Barad and X. Wen, *Locality in Dissipative Ground-State Preparation*, [arXiv:2610.40628v1][3] (2026). See the exact spectral criterion and the spectral-filtering end matter.
 4. Y. Zhan et al., *Rapid quantum ground state preparation via dissipative dynamics*, Phys. Rev. X **16**, 011004 (2026), [DOI][4a]; [arXiv:2503.15827v3][4]. See Sec. II, Theorems 1–3, and their model restrictions.
@@ -74,6 +62,7 @@ The machine-readable bibliography is [references.bib](references.bib).
 [1a]: https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/293b8e6914d8ff85ed3605d6c85dc95abfef4b61/science/range_lower_bound.md
 [1b]: https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/293b8e6914d8ff85ed3605d6c85dc95abfef4b61/science/reservoir_construction.md
 [1c]: https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/293b8e6914d8ff85ed3605d6c85dc95abfef4b61/science/preparation_costs.md
+[1d]: https://github.com/GoGoKo699/Fermi-Sea-Reservoir-Locality/blob/main/science/jump_radius.md
 [2]: https://arxiv.org/abs/2610.13784v1
 [3]: https://arxiv.org/abs/2610.40628v1
 [4]: https://arxiv.org/abs/2503.15827v3

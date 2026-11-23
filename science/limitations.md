@@ -1,39 +1,21 @@
-# What the preparation-time law covers
-
-The time law identifies an unavoidable cost of keeping a stationary reservoir compact. On the critical hopping ring, the smallest possible jump radius has order $`(\log N)^2`$. Within the separate gain/loss model below, every reservoir in that radius regime needs a worst-input preparation time whose logarithm has order at least $`(\log N)^3`$. An explicit reservoir attains the same order. The slow time is therefore a property of this compact preparation task, rather than an artifact of that particular filter.
+# Scope of the preparation-time laws
 
 ## The allowed reservoir
 
-The system has one spinless fermionic mode per lattice site and no additional persistent modes. The generator is time independent and invariant under translation by one site. Its jumps are translated finite-support linear creation operators and translated finite-support linear annihilation operators, with gain and loss kept in separate families. Arbitrarily many such families and size-dependent complex coefficients are allowed. A translation-invariant number-conserving quadratic Hamiltonian may also be present; in this one-mode setting it commutes with every momentum occupation.
-
-Preparation is required from every physical initial density matrix, including non-Gaussian states, at a specified fixed squared overlap with the whole Fermi sea. This already forces the stationary overlap to reach at least that target: the stationary density matrix is itself an allowed initial state. The gain/loss dynamics has positive occupation damping rates whenever such finite-time all-input preparation is possible. The rate scale $`\Gamma`$ bounds the total occupation damping rate at each sampled momentum. Multiplying the complete generator by a common factor changes the time units and does not change the dimensionless quantity $`\Gamma t`$.
-
-The finite-size converse retains its explicit range, mesh and fidelity conditions. The asymptotic compact-range statement takes $`N\to\infty`$ along $`N=4M+2`$, with the fidelity targets and the constant in $`R\le K(\log N)^2`$ held fixed. Constants in an asymptotic lower bound may depend on these fixed choices.
+The [paired theorem](paired_reservoirs.md) treats one fermionic mode per site on a ring, with one-site translation invariance, a time-independent quadratic Hamiltonian and translated finite-support linear jumps. Pairing may occur in the Hamiltonian and the jumps. Only the actual jump radius $`R_J`$ is charged, and the budget $`\Gamma`$ bounds the total squared Fourier jump amplitudes per momentum pair. The coherent range and strength may depend on the system size and are unrestricted. The locality convention is fermionic. A spin representation may add Jordan–Wigner strings.
 
 ## Why whole-state fidelity matters
 
-The requested accuracy concerns the entire many-body state. For a gain/loss stationary state, the target overlap is a product of correct momentum-occupation probabilities. Since an all-input preparation guarantee also applies to that stationary input, a fixed positive requested overlap permits only a bounded sum of stationary occupation errors as the number of sites grows.
+The target is the whole Fermi sea at a fixed squared overlap $`f\in(0,1)`$. Every physical input that commutes with total fermion parity must reach that overlap at the same time. This includes non-Gaussian states and projectors onto odd Fock states. A stationary Gaussian state supplies the aggregate approximation constraint, while an initially odd momentum pair supplies the time bound. The argument allows occasional inaccurate modes and makes no Liouvillian gap identification.
 
-This criterion allows exceptional modes: it does not require every mode to have error of order $`1/N`$. The converse explicitly charges those exceptions. The same result does not follow merely from an energy-density target, accuracy of finitely many local observables, or an approximation on a fixed interval. Those are different preparation tasks.
-
-The time target is also operational. It asks when **every** allowed initial state has reached a specified fixed target overlap. The proof uses occupation dynamics and a physical complementary Fock input. It does not identify the smallest occupation damping rate with the complete Liouvillian spectral gap.
-
-## Coherent controls and other architectures
-
-The existing spatial result for this target also permits general quadratic pairing when coherent range is counted. The temporal converse here uses the separate gain/loss and number-conserving structure. It makes no temporal claim for general pairing Hamiltonians or jumps that combine creation and annihilation in one family.
-
-Additional modes per unit cell, enlarged unit cells, time-dependent control, measurement and feedback, nonlinear jumps, and non-Markovian reservoirs can change the allowed dynamics. They are outside this theorem. The result supplies no lower bound for these architectures and does not establish that the present time scale is unavoidable for arbitrary quantum state-preparation methods.
-
-The locality convention is fermionic. Mapping to spins through a Jordan–Wigner transformation can introduce strings, so a fermion-local jump need not be local in the corresponding spin representation.
+The [separate gain/loss result](time_converse.md) uses a per-mode occupation-rate cap and a number-conserving Hamiltonian. It gives an explicit finite-size time certificate and the exact all-input curve. Its hypotheses and constants remain useful in that narrower setting.
 
 ## Larger range, precision and implementation
 
-The matching law concerns radius of order $`(\log N)^2`$. The more general resource inequality also shows that polynomial preparation time requires radius at least of order $`(\log N)^3`$. It does not supply a polynomial-time construction at that radius, the optimized preparation time for every larger radius, or a complete time–range frontier. Full-ring momentum-selective jumps provide a different endpoint, so the compact-range qualification is consequential.
+The paired bound scales as $`[\log(N/(R_J+1))]^3`$ for the logarithm of one plus normalized time. At every fixed $`\epsilon\in(0,1)`$, the optimal logarithm has order $`(\log N)^3`$ from a sufficiently large logarithm-squared radius budget up to $`N^{1-\epsilon}`$. Polynomial normalized time requires $`R_J+1\ge N\exp[-O((\log N)^{1/3})]`$. Full-ring support gives a logarithmic-time construction. The exact radius that permits polynomial time remains open between these endpoints.
 
-The coefficients in the converse may be arbitrary finite complex numbers. The explicit realization can be programmed with finite coefficient precision, but its sufficient precision bound is not a universal lower bound on experimental calibration or coefficient-description cost. Neither theorem supplies a microscopic bath construction or a complete laboratory runtime estimate. Rate strengths, spatial support and the mathematical time required by the stated Lindblad model are the resources addressed here.
+The coefficients may be arbitrary finite complex numbers. The [explicit compact reservoir](construction.md) has a sufficient finite-precision specification. The bounds charge rate, radius and elapsed Lindblad time. They do not establish a microscopic bath implementation, a calibration lower bound or an end-to-end hardware runtime.
 
-## Relation to earlier locality–time results
+## Coherent controls and other architectures
 
-Earlier exact ground-state preparation results relate the spatial tails of target-annihilating jumps to zeros of their momentum weights and the resulting relaxation times. The present task permits an approximate mixed stationary state and optimizes over all finite-support gain/loss filters in the compact radius regime. The consequential statement is the universal worst-input time lower bound under this fixed global-fidelity criterion.
-
-See the [scientific model](model.md), [converse](time_converse.md), [matching realization](construction.md) and [related-work comparison](../references/RELATED_WORK.md) for the exact statements and attribution. Those pages are the authority if a shortened summary omits a qualifier.
+Extra persistent modes, enlarged unit cells, time-dependent control, measurement, feedback, nonlinear jumps and non-Markovian dynamics fall outside the model. Energy density and selected local observables are different scores. The [related-work comparison](../references/RELATED_WORK.md) distinguishes finite-support, whole-state approximate preparation from exact-target locality theorems and rapid mixing in other models.
