@@ -4,6 +4,7 @@ on:
     types: [opened, synchronize, reopened]
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: hosted-math-review-${{ github.ref }}
   cancel-in-progress: true
@@ -30,11 +31,32 @@ jobs:
         run: timeout 120 npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund --fetch-retries=1 playwright@1.56.1 mathjax-full@3.2.1
       - name: Install pinned Chromium using runner system libraries
         run: timeout 120 "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install chromium
-      - name: Check the repaired display at both widths
+      - name: Retrieve the exact-source capture receipts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 45187834602 --repo "$GITHUB_REPOSITORY" --name hosted-math-full-45187834602 --dir "$RUNNER_TEMP/prior-hosted"
+          cd "$RUNNER_TEMP/prior-hosted"
+          echo '06fd14952dce415fa6a621aa8ab6091b055fe1216925df2895e41964a07b5168  capture-state.json' | sha256sum --check
+      - name: Resume the full exact-source capture
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
         run: |
-          node verification/hosted_ci/probe_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$SCIENCE_REVISION" --page science/paired_reservoirs.md --output "$RUNNER_TEMP/hosted-math"
+          set +e
+          previous="$RUNNER_TEMP/prior-hosted"
+          result=1
+          for attempt in 1 2 3 4 5 6; do
+            output="$RUNNER_TEMP/hosted-attempt-$attempt"
+            node verification/hosted_ci/capture_hosted_math.cjs --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$SCIENCE_REVISION" --resume-from "$previous" --output "$output"
+            result=$?
+            if [ "$result" -eq 0 ]; then break; fi
+            python3 -c 'import json,sys; failures=json.load(open(sys.argv[1]))["failures"]; sys.exit(0 if failures and all(x.get("category")=="transport_failure" for x in failures) else 1)' "$output/capture-state.json"
+            if [ "$?" -ne 0 ]; then break; fi
+            previous="$output"
+            if [ "$attempt" -lt 6 ]; then sleep "$((attempt * 6 + 6))"; fi
+          done
+          mv "$output" "$RUNNER_TEMP/hosted-math"
+          exit "$result"
       - name: Retain evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
